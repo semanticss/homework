@@ -1,0 +1,130 @@
+\documentclass{exam}
+\usepackage[margin=0.7in]{geometry}
+
+\begin{document}
+\title{Homework 0}
+\author{Hudson Benites}
+\date{January 9th, 2026}
+\maketitle
+
+\begin{questions}
+    \question(2.1 Question 2)
+    \newline
+    (a) False. We are given that $P \rightarrow Q$. We know the logical equivalency $P \rightarrow Q \equiv \neg P \lor Q$.
+    We are given $\neg Q$, so we must have $\neg P$, thus we cannot have P. \newline
+    (b) False. We are given $\neg Q$, so we cannot have $P \land Q$. \newline
+    (c) False. We are given $P \rightarrow Q$, and we know that $P \rightarrow Q \equiv \neg P \lor Q$. We are given $\neg Q$, thus
+    we must have $\neg P$. Thus, we have $\neg Q \land \neg P$. $\neg Q \land \neg P \equiv \neg (P \lor Q)$, so $P \lor Q$ is false.
+
+    \question(2.1 Question 3)
+    \newline
+    (a) True. We know $\neg P \rightarrow Q \equiv P \lor Q$. We are given that $P \rightarrow Q$ is false, which is logically equivalent
+    to $\neg (\neg P \lor Q) \equiv P \land \neg Q$. From this, we know $P$, thus $P \lor Q$ is satisfied, and $\neg P \rightarrow Q$ is true.
+    \newline
+    (b) True. We know that $Q \rightarrow P \equiv \neg Q \lor P$. Similarly to (a), we have $\neg (P \rightarrow Q) \equiv P \land \neg Q$, so we have $P$.
+    Thus, we have $\neg Q \lor P$, so we have. $Q \rightarrow P$. \newline
+    (c) True. We are given $\neg (P \rightarrow Q) \equiv P \land \neg Q$. We have $P$, so we have $P \lor Q$.
+
+    \question(2.1 Question 7)
+    \newline
+    We construct the following truth table:
+    \begin{displaymath}
+    \begin{array}{|c c c|c|c|}
+    p & q & r & p \land (q \lor r) & (p \land q) \lor (p \land r)\\ 
+    \hline 
+    1 & 1 & 1 & 1 & 1\\
+    1 & 0 & 1 & 1 & 1\\
+    1 & 1 & 0 & 1 & 1\\
+    1 & 0 & 0 & 0 & 0\\
+    0 & 1 & 1 & 0 & 0\\
+    0 & 0 & 1 & 0 & 0\\
+    0 & 1 & 0 & 0 & 0\\
+    0 & 0 & 0 & 0 & 0\\
+    \end{array}
+    \end{displaymath}
+
+    We find that $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ based on their
+    truth table.
+
+    \question(2.2 Question 1)
+    \newline
+    (a) 
+    Converse: If $a^2 = 25$, then $a = 5$. 
+    Contrapositive: If $a^2 \neq 25$, then $a \neq 5$.
+    \newline
+    (b) Converse: If Laura is playing golf, then it is not raining. Contrapositive: If Laura is not playing golf, then it is raining. 
+    \newline
+    (c) Converse: If $a^4 \neq b^4$, then $a \neq b$. Contrapositive: If $a^4 = b^4$, then $a=b$.
+    \newline
+    (d) Converse: If $3a$ is odd, then $a$ is odd. Contrapositive: If $3a$ is not odd (even), then $a$ is not odd (even).
+
+    \question(2.2 Question 3(e) and 3(f))
+    \newline
+    (e) I will not wash the car and I will not mow the lawn.
+    \newline
+    (f) I will graduate from college and I will not get a job and I will not go to graduate school.
+
+    \question(2.2 Question 4)
+    \newline
+    (a) We construct the following truth table:
+
+    \begin{displaymath}
+    \begin{array}{|c c|c|c|}
+    p & q & p \Leftrightarrow q & (p \rightarrow q) \land (q \rightarrow p)\\ 
+    \hline 
+    1 & 1 & 1 & 1\\
+    1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & 1 & 1\\
+    \end{array}
+    \end{displaymath}
+    Thus, $p \Leftrightarrow q \equiv [(p \rightarrow q) \land (q \rightarrow p)]$.
+    \newline \newline
+    (c) We construct the following truth table:
+    \begin{displaymath}
+    \begin{array}{|c c|c|c|}
+    p & q & p \Leftrightarrow q & \neg p \Leftrightarrow \neg q\\ 
+    \hline 
+    1 & 1 & 1 & 1\\
+    1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & 1 & 1\\
+    \end{array}
+    \end{displaymath}
+    Thus, $p \Leftrightarrow q \equiv \neg p \Leftrightarrow \neg q$.
+
+    \question(2.2 Question 7)
+    \newline
+    (a) We are given $(P \land Q) \rightarrow R$, which is logically equivalent to $\neg(P \land Q) \lor R \equiv \neg P \lor \neg Q \lor R$. 
+     By idempotency, $\neg P \lor \neg Q \lor R \equiv \neg P \lor \neg Q \lor R \lor R$. By
+    the associativity of conjunctions and disjunctions, this is equivalent to $(\neg P \lor R) \lor (\neg Q \lor R)$, which is in turn equivalent to
+    $(P \rightarrow R) \lor (Q \rightarrow R)$.
+    \newline
+    (b) We are given $P \rightarrow (Q\land R)$. This is logically equivalent to $\neg P \lor (Q \land R)$. By idempotency, $\neg P \lor (Q \land R) \equiv \neg P \lor (Q \land R) \lor \neg P$.
+    By the associativity of conjunctions and disjunctions, $\neg P \lor (Q \land R) \lor \neg P \equiv (\neg P \lor Q) \land (\neg P \lor R)$, which is equivalent to  $(P \rightarrow Q) \land (P \rightarrow R)$.
+
+    \question(2.2 Question 10(a), (b), and (c))
+    \newline
+    (a) The statement is the converse, and is neither a negation or an equivalent.
+    \newline
+    (b) The statement is the inverse, and is neither a negation or an equivalent.
+    \newline
+    (c) The statement is the contrapositive, and is therefore logically equivalent.
+
+    \question Question 9
+    \newline
+    If $P \downarrow Q$ is true exactly when $P$ and $Q$ are both false, then an equivalent
+    expression is $\neg P \land \neg Q$.
+    
+    \question Question 10
+    \newline
+    A logical equivalent to $\neg P$ solely in terms of the neither operator is $P \downarrow P$. By both the definition of the neither operator and idempotency, $P \downarrow P \equiv \neg P \land \neg P \equiv \neg P$.
+    \newline
+    A logical equivalent for $P \lor Q$ solely in terms of the neither operator is $(P \downarrow Q) \downarrow (P \downarrow Q)$. By the definition of the neither operator, as well as the definition
+    of idempotency, $(P \downarrow Q) \downarrow (P \downarrow Q) \equiv \neg(\neg P \land \neg Q) \land \neg (\neg P \land \neg Q)$. Negating, we get $(P \lor Q) \land (P \lor Q) \equiv P \lor Q$.
+    \newline
+    A similar approach can be taken for $P \land Q$. $P \land Q \equiv (P \downarrow P) \downarrow (Q \downarrow Q)$. By definition of the neither operator, as well as the fact that $\neg P \equiv P \downarrow P$, we can show that $(P \downarrow P) \downarrow (Q \downarrow Q) \equiv \neg (\neg P) \land \neg (\neg Q)$. Negating,
+    we get $P \land Q$.
+\end{questions}
+
+\end{document}

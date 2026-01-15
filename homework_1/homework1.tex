@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\newtheorem{lemma}{Lemma}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\fancyhead[l]{Hudson Benites}
+\fancyhead[c]{Homework \#1}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\setlength{\headheight}{15pt}
+\fancyhead[r]{\today}
+
+\begin{document}
+
+\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
+    \item (Section 2.4: \#1a, \#1b)
+        \begin{itemize}[leftmargin=0cm, itemsep = 5pt]
+            \item[] (a) There exists a rational number $x$, such that $x^2 -3x -7 =0$. This statement is false, as
+            the solutions to this polynomial are $\frac{3}{2} \pm \frac{\sqrt{37}}{2}$, and the square root of a non-square integer is irrational. 
+            \item[] (b) There exists a real number $x$, such that $x^2 + 1 = 0$. This is false because the solutions
+            to this polynomial are $\pm i$, which are imaginary.
+        \end{itemize}
+
+    \item (Section 2.4: \#2d, \#2f)
+        \begin{itemize}[leftmargin=0cm, itemsep = 5pt]
+            \item[] (d) Consider $m=4$. Then, $\frac{m}{3} = \frac{4}{3} \notin \mathbb{Z}$. The negation of the statement in English is `there exists an integer $m$ such that $m$ divided by 3 is not an integer.'
+            \item[] (f) Consider $x=\frac{\pi}{2}$. Then, $\tan^2{x} + 1$ is undefined, and thus there can be no equality. The negation of the statement in English is that 'there exists a real number $x$ such that the one more than the tangent squared of $x$ is not equal to the secant squared of $x$.'
+        \end{itemize}
+
+    \item (Section 2.4: \#10a, \#10b)
+        \begin{itemize}[leftmargin=0cm]
+            \item[] (a) $[\forall x, y \in \mathbb{R}][(x < y) \rightarrow (f(x) < f(y))]$.
+            \item[] (b) $[\exists x, y \in \mathbb{R}][(x \geq y) \land f(x) < f(y)]$.
+        \end{itemize}
+
+    \item (Section 3.2: \#5)
+        \begin{proof}
+            We proceed by the contrapositive, which is the statement \begin{center}
+            If $a$ and $b$ are odd, then $ab$ is odd.
+            \end{center} Suppose that $a$ and $b$ are odd integers. So,  $a = 2k + 1, k \in \mathbb{Z}$ and $b = 2l + 1, l \in \mathbb{Z}$. Then
+            $ab = (2k + 1)(2l + 1) = 4lk + 2k + 2l + 1$. Factoring, we get $2(2lk + k + l) + 1$, which is odd.
+        \end{proof}
+
+
+    \item (Section 3.2: \#10)
+        \begin{proof}
+            Suppose $n$ is an arbitrary integer.
+            \begin{itemize}[leftmargin=0.95cm]
+            \item[($\rightarrow$)] Suppose $n$ is even. Then, $n = 2k, k \in \mathbb{Z}$. So, $n^2 = 4k^2$. Then, \begin{center}$n^2 \equiv 0 \pmod{4}$. \end{center}
+            Thus, $4 \mid n^2$.
+            \item[($\leftarrow$)] We proceed by the contrapositive, which is the statement \begin{center}
+            If $n$ is odd, then $4 \nmid n^2$.
+            \end{center} Suppose $n$ is odd. Then, $n = 2k + 1, k \in \mathbb{Z}$, and so 
+            $n^2 = 4k^2 + 4k + 1$. Factoring, we get $n^2 = 4(k^2 + k) + 1$. Thus, \begin{center}$n^2 \equiv 1 \pmod{4}$, \end{center} so $4 \nmid n^2$.
+            
+        \end{itemize}
+        \end{proof}
+
+    \item (Section 3.3: \#4)
+        \begin{proof}
+        We proceed via a proof by contradiction. Suppose that $\exists r \in \mathbb{Q}$ such that $r^3 = 2$. Then, $r$ can be expressed as $\frac{a}{b}$ such that $(a,b \in \mathbb{Z}), \gcd(a,b) = 1$. 
+        Substituting in, we have $\frac{a^3}{b^3} = 2$. Rearranging, we get that
+            \begin{center}
+                $a^3 = 2b^3$
+            \end{center}
+            By observation, we see that $a^3$ is even. 
+            \begin{lemma} 
+            If $n^3$ is even, then $n$ is even.
+                \begin{proof}
+                    We proceed via a proof by the contrapositive, which is the statement \begin{center}
+                    If $n$ is odd, then $n^3$ is odd.
+                    \end{center} Suppose $n$ is odd. Then, $n = 2k+1, k \in \mathbb{Z}$. Expanding, we get $n^3 = 8k^3 + 12k^2 +6k +1$. Thus, $n^3$ is odd.
+                \end{proof}
+            \end{lemma}
+            
+            By Lemma 1, because $a^3$ is even, $a$ is also even. So, it can be written as $a = 2k, k \in \mathbb{Z}$. Plugging $2k$ in for $a$, we find that 
+        $8k^3 = 2b^3$. So,
+        \begin{center}
+            $4k^3 = b^3$.
+        \end{center}
+        By observation, $b^3$ must also be even, and by Lemma 1, $b$ must be even as well. So, $a$ and $b$ both have 2 as a factor; however, we stated previously that $\gcd(a,b) = 1$. Therefore, the assumption that $r$ is a rational number
+        leads to a contradiction, thus $r$ must be irrational.
+        \end{proof}
+    
+    \item
+        \begin{itemize}
+            \item[(a)] \begin{proof}
+                    From the definition of the biconditional, we have $P \Leftrightarrow Q \equiv (P \rightarrow Q) \land (Q \rightarrow P)$. Rewriting the implications in their logical form,
+                    we get \begin{center}$(P \leftarrow Q) \land (Q \rightarrow P) \equiv (\neg P \lor Q) \land (\neg Q \lor P)$.\end{center} Using the distributive properties of conjunctions and disjunctions,
+                    we find that \begin{center}$(\neg P \lor Q) \land (\neg Q \lor P) \equiv (\neg Q \land \neg P) \lor (\neg Q \land Q) \lor (\neg P \land P) \lor (P \land Q)$.\end{center} Eliminating the contradictions $\neg P \land P$ and $\neg Q \land Q$, we obtain
+                    $(\neg Q \land \neg P) \lor (P \land Q)$. Thus, $P \Leftrightarrow Q \equiv (P \land Q) \lor (\neg P \land \neg Q)$.\\
+                \end{proof}
+            
+            \item[(b)]
+                \begin{proof}
+                    Rewriting the LHS in terms of logical operators, we get \begin{center} $(P \rightarrow Q) \lor (P \rightarrow Q) \equiv (\neg P \lor Q) \lor (\neg P \lor R)$.\end{center} Using the associative properties of disjunctions, 
+                    we can rewrite the expression into the form \begin{center}$(\neg P \lor Q) \lor (\neg P \lor R) \equiv (\neg P \lor \neg P) \lor (Q \lor R)$. \end{center}By idempotency, this is equivalent to $\neg P \lor (Q \lor R)$. This is the definition of an implication,
+                    so $\neg P \lor (Q \lor R) \equiv P \rightarrow (Q \lor R)$. Thus, $(P \rightarrow Q) \lor (P \rightarrow R) \equiv P \rightarrow (Q \lor R)$.
+                \end{proof}
+        \end{itemize}
+
+    \item
+        \begin{proof}
+            We proceed by contradiction. Suppose there exists $x_0,y_0 \in \mathbb{Z}$ such that $x_0^2 = 4y_0 + 3$. We consider two cases.
+            \begin{itemize}[leftmargin=1.5cm]
+            \item[Case 1:] $x_0$ is even.  Then, $x_0 = 2k, k \in \mathbb{Z}$. Plugging into the original expression, we get $4k^2 = 4y + 3$. Taking the expression modulo 4, we get $0 \equiv 3 \pmod{4}$, which is a contradiction.
+            \item[Case 2:] $x_0$ is not even. So, $x_0$ is odd, and can be expressed as $x_0 = 2k + 1, k \in \mathbb{Z}$. Plugging into the original expression, we get $4k^2 + 4k + 1 = 4(k^2 + k) + 1 = 4y + 3$. Taking the expression modulo 4, we get $1 \equiv 3 \pmod{4}$, which is a contradiction.
+            \end{itemize}
+        In both cases, we have contradictions, thus there cannot exist integer solutions $x, y \in \mathbb{Z}$ such that $x^2 = 4y + 3$.
+        \end{proof}
+
+    \item 
+        \begin{proof}
+        Suppose $x, y \in \mathbb{R}$, and $0<x<y$. Because $x$ and $y$ are both non-zero, $\frac{1}{xy}$ exists. We multiply the expression $0<x<y$ by $\frac{1}{xy}$, which preserves the order of the inequality by the multiplicativity axiom. This gives us
+        \begin{center}
+        $ (0 < x < y) (\frac{1}{xy}) = 0 < \frac{1}{y} < \frac{1}{x}$.
+        \end{center}
+        \end{proof}
+
+    \item 
+        \begin{proof}
+        Suppose $\epsilon \in \mathbb{R}$ and $\epsilon > 0$. Then, we know that $\frac{1}{\epsilon} \in \mathbb{R}$ exists since $\epsilon \neq 0$. Because $\frac{1}{\epsilon} \in \mathbb{R}$, by the Archimedean Principle, $\exists n \in \mathbb{Z}$ such that $n > \frac{1}{\epsilon}$. Because $\epsilon > 0$, we can say $n \in \mathbb{Z}^+$.
+        By the transitivity axiom, because $\frac{1}{\epsilon} > 0$ and $n > \frac{1}{\epsilon}$, we have the inequality \begin{equation} 0 < \frac{1}{\epsilon} < n. \end{equation} We showed in Problem 9 that if the inequality $0<x<y$ holds for some $x,y \in \mathbb{R}$, then $0<\frac{1}{y}<\frac{1}{x}$. Applying that result to Equation (1), we know that $0<\frac{1}{n} < \epsilon$.
+        So, $\frac{1}{n} < \epsilon$. Thus, we are done.
+        \end{proof} 
+    
+\end{enumerate}
+\end{document}
