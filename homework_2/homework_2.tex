@@ -5,8 +5,12 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{braket}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
+
 
 \pagestyle{fancy}
 \fancyhead[l]{Hudson Benites}
@@ -22,11 +26,11 @@ NOTE: ALL ANSWERS TEMPORARY AND NOT CHECKED
     \item (Section 2.3, \#2b) $B = \Set{-\pi^x | x \leq 0}$.
     \item (Section 2.3, \#5)
         \begin{itemize}
-            \item[(a)] $S = \Set{x \in \mathbf{Z} | x \geq 5}$.
-            \item[(b)] $S = \Set{2x + 1 | x \in \mathbf{Z}}$.
-            \item[(c)] $S = \Set{x \in \mathbf{Q} | x > 0}$.
-            \item[(d)] $S = \Set{x \in \mathbf{R} | 1 < x < 7}$.
-            \item[(e)] $S = \Set{x \in \mathbf{R} | x^2 > 0}$.
+            \item[(a)] $S = \Set{x \in \mathbb{Z} | x \geq 5}$.
+            \item[(b)] $S = \Set{2x + 1 | x \in \mathbb{Z}}$.
+            \item[(c)] $S = \Set{x \in \mathbb{Q} | x > 0}$.
+            \item[(d)] $S = \Set{x \in \mathbb{R} | 1 < x < 7}$.
+            \item[(e)] $S = \Set{x \in \mathbb{R} | x^2 > 0}$.
         \end{itemize}
 
     \item (Section 5.3, \#2)
@@ -37,5 +41,59 @@ NOTE: ALL ANSWERS TEMPORARY AND NOT CHECKED
             of
         \end{itemize}
         \end{proof}
+
+    \item (Should be question 6)
+        \begin{itemize}
+            \item[(a)] False. $11 \notin B$.
+            \item[(b)] True. Every element in $A$ is also in $\mathbb{Z}^+$.
+            \item[(c)] False. $A$ is not an integer, and therefore is not a subset of $\mathbb{Z}^+$. 
+            \item[(d)] True.
+        \end{itemize}
+
+    \item (Should be question 7)
+        \begin{itemize}
+            \item[(a)] False. The empty set has no elements, and the set on the RHS has 1 element.
+            \item[(b)] True. The empty set is a subset of every set.
+            \item[(c)] True. The empty set appears in the set on the RHS, and therefore is an element.
+        \end{itemize}
+
+    \item (Should be question 8)
+    \begin{proof}
+    Suppose $A$ and $B$ are sets, and $A \subseteq B$. Let $X$ be an arbitrary element of $\mathcal{P}(A)$. Then, $X \subseteq A \subseteq B$, so $X\subseteq B$. Thus, $X\in \mathcal{P}(B)$. So, an aribtrary element of $\mathcal{P}(A)$ is in $\mathcal{P}(B)$, so $\mathcal{P}(A)\subseteq \mathcal{P}(B)$.  
+        
+    \end{proof}
+
+    \item (Should be question 9)
+        \begin{proof}
+        In order to show that $\mathcal{P}(A \cap B) = \mathcal{P}(A) \cap \mathcal{P}(B)$, we show that they are both are a subset of each other.
+
+        \begin{itemize}
+            \item[$(\subseteq)$] Suppose $A$ and $B$ are sets, and $C\in \mathcal{P}(A \cap B)$. Then, $C\subseteq(A\cap B) \rightarrow C\subseteq A$ and $C\subseteq B$. $C\subseteq A \rightarrow C\in \mathcal{P}(A)$. Similarly,
+            $C\subseteq B \rightarrow C\in \mathcal{P}(B)$. Thus, $C \in \mathcal{P}(A) \cap \mathcal{P}(B)$.
+            
+            \item[$(\supseteq)$] The argument is symmetric.
+        \end{itemize}
+        \end{proof}
+
+    \item (Should be question 10)
+        \begin{itemize}
+            \item[] $X \times Y = \Set{(a,a), (a,b), (a,d), (c,a), (c,b), (c,d)}$.
+            \item[] $Y \times X = \Set{(a,a), (b,a), (d,a), (a,c), (b,c), (d,c)}$.
+            \item[] $X \times X = \Set{(a,a), (a,c), (c,a), (c,c)}$.
+        \end{itemize}
+
+    \item (Should be question 12)
+        \begin{itemize}
+            \item[] $\bigcap\limits_{k=1}^{\infty}A_k = \{1\}$
+            \item[] $\bigcup\limits_{k=1}^{\infty}A_k = [1,2]$
+            \item[] $\bigcap\limits_{k=1}^{\infty}B_k = \varnothing$
+            \item[] $\bigcup\limits_{k=1}^{\infty}A_k = (1,2)$
+        \end{itemize}
+
+    \item (Should be question 13)
+        \begin{proof} 
+            Let $S$ be square with vertices $ABCD$ and side length $1$, and let there be 5 points, $p_1, p_2,\ldots, p_5$.  Construct 4 circles of radius $\frac{\sqrt{2}}{2}$, centered about $A, B, C, D$ respectively. We place one point from $p1,\dots, p_4$ into each shaded region. $p_5$ must go into 
+
+    \end{proof}
 \end{enumerate}
 \end{document}
