@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+
+
+\pagestyle{fancy}
+\fancyhead[l]{Hudson Benites}
+\fancyhead[c]{Homework \#2}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\setlength{\headheight}{15pt}
+\fancyhead[r]{\today}
+
+\begin{document}
+\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
+    \item (Section 6.4, \#2)
+        \begin{itemize}
+            \item[-] $g \circ h = g(h(x)) = g(3x+2)={(3x+2)}^2$.
+            \item[-] $h\circ g = h(g(x)) = h(x^3)=3x^3+2$.
+            \item[-] $g\circ h \neq h\circ g$, thus composition is not $\ldots$.
+        \end{itemize}
+
+    \item
+        \mbox{}
+        \begin{itemize}
+            \item[(a)] The image of $f$ is all the odd integers. The image of $f(X)$ where $X=\Set{x\in \mathbb{Z} | x \text{ is even}}$ is every other odd integer.
+            \item[(b)] The image of $f$ is every positive real number. The image of $f(X)$ where $X = (0,1]$ is $(\infty, 1]$. % chktex 9
+            \item[(c)] The image of $f$ is $[-1,1]$. The image of $f(X)$ where $X = [0,\pi)$ is also $[-1,1]$. % chktex 9
+        \end{itemize}
+
+    \item
+        \mbox{}
+        \begin{enumerate}
+            \item[(a)]
+                \begin{proof}
+                Suppose $A$ and $B$ are sets with subsets $U,V \subseteq A$, and $f : A \to B$ is a function. Let $b$ be an aribtrary element of $f(U \cap V)$. This means that there 
+                exists an $x \in U \cap V$ such that $f(x) = b$. Therefore, $\exists x \in U$ such that $f(x) = b$, and $\exists x\in V$ such that $f(x)=b$. Therefore, $b\in f(U) \land b\in f(V) \rightarrow b\in f(U) \cap f(V)$. So, $f(U \cap V ) \subseteq f(U) \cap f(V)$.
+                \end{proof}
+        \end{enumerate}
+
+    \item
+        \mbox{}
+        \begin{enumerate}
+            \item[(a)] $f^{-1}(Y) = [0,\infty)$. % chktex 9
+            \item[(b)] I think this is like all $[n\pi, (n+1)\pi]$ only for even $n$. 
+            \item[(c)] I think this is $\Set{1,2,10,12,14,16,18}$. 
+        \end{enumerate}
+\end{enumerate}
+\end{document}
