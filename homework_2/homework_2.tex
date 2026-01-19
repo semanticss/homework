@@ -21,7 +21,6 @@
 \fancyhead[r]{\today}
 
 \begin{document}
-NOTE: ALL ANSWERS TEMPORARY AND NOT CHECKED
 \begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
     \item (Section 2.3, \#2b) $B = \Set{-\pi^x | x \leq 0}$.
     \item (Section 2.3, \#5)
@@ -37,12 +36,29 @@ NOTE: ALL ANSWERS TEMPORARY AND NOT CHECKED
         \begin{proof}
         In order to prove equality, we show that $A\cup (B \cap C) \subseteq (A \cap B) \cup (A \cap C)$ and $(A \cap B) \cup (A \cap C) \subseteq A\cup (B \cap C)$.
         \begin{itemize}
-            \item[($\rightarrow$)] Suppose $x$ is an arbitrary element in $A \cap (B \cup C)$. Then, $x\in A \land (x\in B \lor x\in C)$. By the distributive property of conjunctions and disjunctions, $(x\in A \land x\in B) \lor (x\in A\lor x\in C)$. By the definition
-            of
+            \item[($\subseteq$)] Suppose $x$ is an arbitrary element in $A \cap (B \cup C)$. Then, $x\in A \land (x\in B \lor x\in C)$. By the distributive property of conjunctions and disjunctions, $(x\in A \land x\in B) \lor (x\in A\lor x\in C)$. Thus, $x\in (A\cap B) \cup (A\cap C)$.
+            \item[($\supseteq$)] The argument is symmetric.
         \end{itemize}
         \end{proof}
 
-    \item (Should be question 6)
+    \item (Section 5.3, \#3)
+        \begin{proof}
+                In order to prove equality, we show that $\overline{(A \cap B)} \subseteq \overline{A} \cup \overline{B}$ and $\overline{A} \cup \overline{B} \subseteq \overline{(A \cap B)}$.
+                \begin{itemize}
+                    \item[($\subseteq$)] Let $x$ be an arbitrary element of $\overline{(A \cap B)}$. That is, $(x\notin A \lor x\notin B) \rightarrow (x\in \overline{A} \lor x\in \overline{B})$. Thus, $x\in \overline{A} \lor x\in \overline{B}$, so $x\in \overline{A} \cup \overline{B}$.
+                    \item[($\supseteq$)] The argument is symmetric.
+                \end{itemize}
+        \end{proof}
+
+    \item (Section 5.5, \#1a-d)
+        \begin{itemize}
+            \item[(a)] $\Set{3,4}$.
+            \item[(b)] $\Set{1,2,3,4,5,6}$.
+            \item[(c)]  $\varnothing$.
+            \item[(d)] $\Set{3,4,5,6,7,8,9,10}$.
+        \end{itemize}
+
+    \item
         \begin{itemize}
             \item[(a)] False. $11 \notin B$.
             \item[(b)] True. Every element in $A$ is also in $\mathbb{Z}^+$.
@@ -50,20 +66,20 @@ NOTE: ALL ANSWERS TEMPORARY AND NOT CHECKED
             \item[(d)] True.
         \end{itemize}
 
-    \item (Should be question 7)
+    \item
         \begin{itemize}
             \item[(a)] False. The empty set has no elements, and the set on the RHS has 1 element.
             \item[(b)] True. The empty set is a subset of every set.
             \item[(c)] True. The empty set appears in the set on the RHS, and therefore is an element.
         \end{itemize}
 
-    \item (Should be question 8)
+    \item
     \begin{proof}
     Suppose $A$ and $B$ are sets, and $A \subseteq B$. Let $X$ be an arbitrary element of $\mathcal{P}(A)$. Then, $X \subseteq A \subseteq B$, so $X\subseteq B$. Thus, $X\in \mathcal{P}(B)$. So, an aribtrary element of $\mathcal{P}(A)$ is in $\mathcal{P}(B)$, so $\mathcal{P}(A)\subseteq \mathcal{P}(B)$.  
         
     \end{proof}
 
-    \item (Should be question 9)
+    \item
         \begin{proof}
         In order to show that $\mathcal{P}(A \cap B) = \mathcal{P}(A) \cap \mathcal{P}(B)$, we show that they are both are a subset of each other.
 
@@ -75,14 +91,27 @@ NOTE: ALL ANSWERS TEMPORARY AND NOT CHECKED
         \end{itemize}
         \end{proof}
 
-    \item (Should be question 10)
+    \item
         \begin{itemize}
             \item[] $X \times Y = \Set{(a,a), (a,b), (a,d), (c,a), (c,b), (c,d)}$.
             \item[] $Y \times X = \Set{(a,a), (b,a), (d,a), (a,c), (b,c), (d,c)}$.
             \item[] $X \times X = \Set{(a,a), (a,c), (c,a), (c,c)}$.
         \end{itemize}
 
-    \item (Should be question 12)
+    \item
+        In order to show that $\overline{A \times B} = (\overline{A} \times B) \cup (\overline{A} \times \overline{B}) \cup (A \times \overline{B})$, we show they are both subsets of each other.
+        \begin{itemize}
+            \item[($\subseteq$)] Let $(x,y)$ be an element of $\overline{A \times B}$, so $x\notin A$ or $y\notin B$. There are three cases that satisfy this conjunction:
+                \begin{itemize}[leftmargin=2cm]
+                    \item[(Case 1:)] $x\notin A$ and $y\notin B$. Thus, $(x,y) \in \overline{A} \times \overline{B}$.
+                    \item[(Case 2:)] $x\in A$ and $y\notin B$. Thus, $(x,y) \in A \times \overline{B}$.
+                    \item[(Case 3:)] $x\notin A$ and $y\in B$. Thus, $(x,y) \in \overline{A} \times B$.  
+                \end{itemize}
+                So, $(x,y) \in (\overline{A} \times B) \cup (\overline{A} \times \overline{B}) \cup (A \times \overline{B})$, thus $\overline{A \times B} = (\overline{A} \times B) \cup (\overline{A} \times \overline{B}) \cup (A \times \overline{B})$.
+            \item[($\supseteq$)] Let $(x,y)$ be an element of $(\overline{A} \times B) \cup (\overline{A} \times \overline{B})$. In all cases, it is never the case that $x\notin A \lor y\notin B$, so in all cases we have $(x,y)\notin A \times B$. Thus, $(x,y)\in \overline{A\times B}$, so $(\overline{A} \times B) \cup (\overline{A} \times \overline{B}) \cup (A \times \overline{B}) \subseteq \overline{A \times B}$.
+        \end{itemize}
+
+    \item 
         \begin{itemize}
             \item[] $\bigcap\limits_{k=1}^{\infty}A_k = \{1\}$
             \item[] $\bigcup\limits_{k=1}^{\infty}A_k = [1,2]$
@@ -90,10 +119,11 @@ NOTE: ALL ANSWERS TEMPORARY AND NOT CHECKED
             \item[] $\bigcup\limits_{k=1}^{\infty}A_k = (1,2)$
         \end{itemize}
 
-    \item (Should be question 13)
+    \item
         \begin{proof} 
-            Let $S$ be square with vertices $ABCD$ and side length $1$, and let there be 5 points, $p_1, p_2,\ldots, p_5$.  Construct 4 circles of radius $\frac{\sqrt{2}}{2}$, centered about $A, B, C, D$ respectively. We place one point from $p1,\dots, p_4$ into each shaded region. $p_5$ must go into 
-
+            Let $S$ be square with vertices $ABCD$ and side length $1$, and let there be 5 points, $p_1, p_2,\ldots, p_5$.  Construct 4 circles of radius $\frac{\sqrt{2}}{2}$, centered about $A, B, C, D$ respectively. We place one point from $p1,\dots, p_4$ into a valid configuration: that is, where each point $p_1, \ldots, p_4$ is on the boundary or inside of only one circle. We notice that $p_5$ must placed on or inside
+            one or more circles, that of which already have a point inside them. Thus, the distance between $p_5$ and at least one other point must be less than or equal to $\frac{1}{\sqrt{2}}$.
+            
     \end{proof}
 \end{enumerate}
 \end{document}
