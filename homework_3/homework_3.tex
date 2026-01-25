@@ -7,6 +7,7 @@
 \usepackage{braket}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usepackage{mathtools}
 \usetikzlibrary{shapes.geometric}
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
@@ -21,38 +22,102 @@
 \fancyhead[r]{\today}
 
 \begin{document}
-\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
-    \item (Section 6.4, \#2)
-        \begin{itemize}
-            \item[-] $g \circ h = g(h(x)) = g(3x+2)={(3x+2)}^2$.
-            \item[-] $h\circ g = h(g(x)) = h(x^3)=3x^3+2$.
-            \item[-] $g\circ h \neq h\circ g$, thus composition is not $\ldots$.
-        \end{itemize}
+\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in, itemsep=1.5em]
+    \item (Section 6.4, \#2) \par $g \circ h = g(h(x)) = g(3x+2)={(3x+2)}^2$. \par $h\circ g = h(g(x)) = h(x^3)=3x^3+2$. \par $g\circ h \neq h\circ g$, thus composition is not commutative.
+
 
     \item
-        \mbox{}
         \begin{itemize}
             \item[(a)] The image of $f$ is all the odd integers. The image of $f(X)$ where $X=\Set{x\in \mathbb{Z} | x \text{ is even}}$ is every other odd integer.
             \item[(b)] The image of $f$ is every positive real number. The image of $f(X)$ where $X = (0,1]$ is $(\infty, 1]$. % chktex 9
-            \item[(c)] The image of $f$ is $[-1,1]$. The image of $f(X)$ where $X = [0,\pi)$ is also $[-1,1]$. % chktex 9
+            \item[(c)] The image of $f$ is $[-1,1]$. The image of $f(X)$ where $X = [0,\pi)$ is also $(0,1]$. % chktex 9
         \end{itemize}
 
     \item
-        \mbox{}
         \begin{enumerate}
             \item[(a)]
                 \begin{proof}
                 Suppose $A$ and $B$ are sets with subsets $U,V \subseteq A$, and $f : A \to B$ is a function. Let $b$ be an aribtrary element of $f(U \cap V)$. This means that there 
                 exists an $x \in U \cap V$ such that $f(x) = b$. Therefore, $\exists x \in U$ such that $f(x) = b$, and $\exists x\in V$ such that $f(x)=b$. Therefore, $b\in f(U) \land b\in f(V) \rightarrow b\in f(U) \cap f(V)$. So, $f(U \cap V ) \subseteq f(U) \cap f(V)$.
                 \end{proof}
+            \item[(b)] 
+            \begin{proof}
+                Suppose the same conditions as in part (a), but now suppose also that $f$ is injective. Let $b$ be an aribtrary element of $f(U) \cap f(V)$. Then, $b\in f(U)$ and $b\in f(V)$.
+                So, $\exists x \in U$ such that $f(x) = b$ and $\exists y \in V$ such that $f(y) = b$. By the injectivity of $f$, $x=y$. WLOG, consider $x$. $x \in U$, and now, $x\in V$. So, $b\in f(U \cap V)$. Thus, $f(U) \cap f(V) \subseteq f(U \cap V)$.
+            \end{proof}
+            \item[(c)] $f(x) = x^2$, $f: \mathbb{R} \to \mathbb{R}$.
         \end{enumerate}
 
     \item
-        \mbox{}
         \begin{enumerate}
             \item[(a)] $f^{-1}(Y) = [0,\infty)$. % chktex 9
-            \item[(b)] I think this is like all $[n\pi, (n+1)\pi]$ only for even $n$. 
-            \item[(c)] I think this is $\Set{1,2,10,12,14,16,18}$. 
+            \item[(b)] $f^{-1}(Y) = \Set{[n\pi, (n+1)\pi]| n \in \Set{\ldots, -4, -2, 0, 2, 4, \ldots}}$.
+            \item[(c)] $f^{-1}(Y) = \Set{1,10,12,14,16,18}$. 
         \end{enumerate}
+
+    \item
+    
+        \begin{itemize}
+            \item[(a)] $e^x$, when taken from $\mathbb{R} \to \mathbb{R}^{+}$ is injective and surjective.
+            \item[(b)] $\sin(x)$ is neither injective nor surjective.
+            \item[(c)] The function in part (c) of Question 4 is not injective, but it is surjective.
+        \end{itemize}
+
+    \item
+        \begin{itemize}
+            \item[(a)] \begin{proof}
+            Suppose $f: A \to B$ is a function taking $A$ to $B$, and that $X \subseteq A$. Let $x$ be an aribtary element of $X$. Consider the image of $X$, $f(X) = \Set{b\in B | b = f(a), a \in X}$. $x \in X$, so $f(x) \in f(X)$.
+            Then, $f^{-1}(f(X)) = \Set{a\in A | f(a) \in f(X)}$. $x \in A$, and $f(x) \in f(X)$, so $x \in f^{-1}(f(X))$. Thus, $X \subseteq f^{-1}(f(X))$.
+            \end{proof}
+            \item[(b)] \begin{proof}
+                Suppose $f: A \to B$ is a function taking $A$ to $B$, $X \subseteq A$, and that $f$ is injective. We prove that $X = f^{-1}f(X)$ by proving that each set is a subset of the other.
+                \begin{itemize}
+                    \item[($\subseteq$)] \begin{proof}
+                    The result from part (a) is true whether or not $f$ is injective.
+                    \end{proof}
+                    \item[($\supseteq$)] Let $a$ be an aribtrary element of $f^{-1}(f(X))$. So, $a \in A$ and $f(a) \in f(X)$. $f(a) \in f(X) = \Set{f(a') | a' \in X}$. By the injectivity of $f$, $a = a'$, so it must be the case that $a \in X$. Thus, $f^{-1}(f(X)) \subseteq X$.
+                \end{itemize}
+                Thus, we are done.
+            \end{proof}
+        \item[(c)] $f(x) = x^2$, $f: \mathbb{R} \to \mathbb{R}$.
+        \end{itemize}
+    \item
+        \begin{proof}
+            We prove that $f$ is surjective if and only if $f^{-1}(Y) \neq \varnothing$ for all nonempty $Y \subseteq B$ by proving both directions.
+            \begin{itemize}
+                \item[$(\rightarrow)$]
+                \begin{proof}
+                Suppose $f: A \to B$ is a function that takes $A$ to $B$, and suppose that $f^{-1}(Y) \neq \varnothing$ and $Y \neq \varnothing \subseteq B$. Consider the family of Singleton sets whose union is $B$, $\mathcal{F} = \Set{\Set{b} | b \in B}$. Clearly, every $\Set{b} \neq \varnothing \subseteq B$, so $\exists a \in A$ such that $f(a) = b$. So, $f$ is surjective.
+                \end{proof}
+                \item[$(\leftarrow)$] 
+            \end{itemize}
+        \end{proof}
+    
+    \item 
+        \begin{itemize}
+            \item[(a)] $V(x^2 - 2) = \Set{\sqrt{2}, -\sqrt{2}}$. $V(x^3 - 1) = \Set{1}$. $V(x^2 + 1) = \varnothing$. $V(0) = \mathbb{R}$.
+            \item[(b)] $V$ is not injective. We show this by a counterexample: consider the polynomials $P \coloneqq x+1=0$ and $Q \coloneqq x^3 + 1 = 0$. We can see that $V(P) = \Set{-1}$ and $V(Q) = \Set{-1}$. Thus, we found have $P, Q \in \mathbb{Z}[x]$ such that $P \neq Q$ but $V(P) = V(Q)$ \par 
+            $V$ is also not surjective. We show this by a counterexample: consider $\Set{\pi^{\frac{1}{n}} | n \in \mathbb{Z}} \in \mathcal{P}(\mathbb{R})$. Informally, $\pi^{\frac{1}{n}}$, $n \in \mathbb{Z}$ cannot be a solution to any $P \in \mathbb{Z}[x]$ because $\pi$ is not the ratio of any two integers. Thus, it would be impossible to obtain any radical of $\pi$ as a solution.
+        \end{itemize}
+
+    \item (Should be question 10)
+        \begin{proof}
+        We prove that $f$ is a bijection by showing it has an inverse. Consider the function $g: \mathbb{R} \setminus \Set{1} \to \mathbb{R} \setminus \Set{1}$ given by $g(x) = \frac{x+1}{x-1}$. We show that $g$ is both a left and right inverse of $f$.
+        \begin{itemize}
+            \item[($g \circ f$)] We have that $g \circ f = g(f(x)), x \in \mathbb{R} \setminus \Set{1}$. So,
+            \begin{center}
+                $g(f(x)) = \frac{\frac{x+1}{x-1} + 1}{\frac{x+1}{x-1} - 1} = \frac{\frac{2x}{x-1}}{\frac{2}{x-1}} = x$.
+            \end{center}
+            Therefore, $g\circ f = I_A$.
+            
+            \item[($f \circ g$)] Similarly, we get that
+            \begin{center}
+                $f(g(x)) = \frac{\frac{x+1}{x-1} + 1}{\frac{x+1}{x-1} - 1} = \frac{\frac{2x}{x-1}}{\frac{2}{x-1}} = x$.
+            \end{center}
+            Therefore, $f\circ g = I_B$.
+        \end{itemize}
+        By showing that $g$ is a left and right inverse of $f$, we have shown that $f$ is invertible. Therefore, $f$ is a bijection. NOTE: I think this is right, but clean it up
+        \end{proof}
+        
 \end{enumerate}
 \end{document}
