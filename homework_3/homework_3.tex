@@ -89,7 +89,7 @@
                 \begin{proof}
                 Suppose $f: A \to B$ is a function that takes $A$ to $B$, and suppose that $f^{-1}(Y) \neq \varnothing$ and $Y \neq \varnothing \subseteq B$. Consider the family of Singleton sets whose union is $B$, $\mathcal{F} = \Set{\Set{b} | b \in B}$. Clearly, every $\Set{b} \neq \varnothing \subseteq B$, so $\exists a \in A$ such that $f(a) = b$. So, $f$ is surjective.
                 \end{proof}
-                \item[$(\leftarrow)$] 
+                \item[$(\leftarrow)$] Suppose $f: A \to B$ is a function that takes $A$ to $B$, and $f$ is surjective. Let $Y \neq \varnothing \subseteq B$. Clearly, every $Y$ contains at least one element $b\in B$, and appealing to the surjectivity of $f$, there must be an $a \in A$ such that $f(a) = b$. Thus, $f^{-1}(Y) \neq \varnothing$.
             \end{itemize}
         \end{proof}
     
@@ -97,12 +97,21 @@
         \begin{itemize}
             \item[(a)] $V(x^2 - 2) = \Set{\sqrt{2}, -\sqrt{2}}$. $V(x^3 - 1) = \Set{1}$. $V(x^2 + 1) = \varnothing$. $V(0) = \mathbb{R}$.
             \item[(b)] $V$ is not injective. We show this by a counterexample: consider the polynomials $P \coloneqq x+1=0$ and $Q \coloneqq x^3 + 1 = 0$. We can see that $V(P) = \Set{-1}$ and $V(Q) = \Set{-1}$. Thus, we found have $P, Q \in \mathbb{Z}[x]$ such that $P \neq Q$ but $V(P) = V(Q)$ \par 
-            $V$ is also not surjective. We show this by a counterexample: consider $\Set{\pi^{\frac{1}{n}} | n \in \mathbb{Z}} \in \mathcal{P}(\mathbb{R})$. Informally, $\pi^{\frac{1}{n}}$, $n \in \mathbb{Z}$ cannot be a solution to any $P \in \mathbb{Z}[x]$ because $\pi$ is not the ratio of any two integers. Thus, it would be impossible to obtain any radical of $\pi$ as a solution.
+            $V$ is also not surjective. We show this by a counterexample: consider $\Set{\pi} \in \mathcal{P}(\mathbb{R})$. Informally, $\pi$ cannot be a solution to any $P \in \mathbb{Z}[x]$ because $\pi$ is not the ratio of any two integers. Thus, it would be impossible to obtain any radical of $\pi$ as a solution, since $P$ has only integer coefficients.
         \end{itemize}
 
-    \item (Should be question 10)
+
+    \item \begin{itemize}
+        \item[(a)] \begin{proof}
+            Suppose $f: A \to B$ is a surjective function, and $g: B \to C$ is not injective. Then, consider an element $c \in C$ such that $\exists b, b' \in B$ such that $f(b) = f(b') = c$. Because $f$ is surjective, $\forall k \in B$ there exists an $a\in A$ such that $f(a)=k$. So, there must be an $f(a) = f(b)=f(b')=c$, so $g\circ f$ is not injective.
+        \end{proof}
+        \item[(b)] \begin{proof}
+            It is not necessarily true. We prove this by a counterexample: consider $f: \mathbb{R} \to \mathbb{R}$ given by $f(x)=2^x$, and $g: \mathbb{R} \to \mathbb{R}$ given by $g(x) = x^2$. $f$ is not surjective, because the negative reals are never accessed. $g$ is not injective because $g(1)=g(-1)=1$. However, $g\circ f = {(2^x)}^2 = 4^x$, which is injective.
+        \end{proof}
+    \end{itemize}
+    \item
         \begin{proof}
-        We prove that $f$ is a bijection by showing it has an inverse. Consider the function $g: \mathbb{R} \setminus \Set{1} \to \mathbb{R} \setminus \Set{1}$ given by $g(x) = \frac{x+1}{x-1}$. We show that $g$ is both a left and right inverse of $f$.
+        We prove that $f$ is a bijection by showing it has an inverse. Consider the function $g: \mathbb{R} \setminus \Set{1} \to \mathbb{R} \setminus \Set{1}$ given by $g(x) = \frac{x+1}{x-1}$, which is only defined when $x\neq 1$. We show that $g$ is both a left and right inverse of $f$.
         \begin{itemize}
             \item[($g \circ f$)] We have that $g \circ f = g(f(x)), x \in \mathbb{R} \setminus \Set{1}$. So,
             \begin{center}
@@ -116,7 +125,7 @@
             \end{center}
             Therefore, $f\circ g = I_B$.
         \end{itemize}
-        By showing that $g$ is a left and right inverse of $f$, we have shown that $f$ is invertible. Therefore, $f$ is a bijection. NOTE: I think this is right, but clean it up
+        By showing that $g$ is a left and right inverse of $f$, we have shown that $f$ is invertible. Therefore, $f$ is a bijection.
         \end{proof}
         
 \end{enumerate}
