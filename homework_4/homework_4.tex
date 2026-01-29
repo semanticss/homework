@@ -9,20 +9,18 @@
 \usepackage{tikz}
 \usepackage{mathtools}
 \usetikzlibrary{shapes.geometric}
-\usepackage{enumerate}
-\usepackage[shortlabels]{enumitem}
-
+\usepackage[shortlabels]{enumitem} % Consistently use enumitem for formatting
 
 \pagestyle{fancy}
 \fancyhead[l]{Hudson Benites}
-\fancyhead[c]{Homework \#2}
+\fancyhead[c]{Homework \#4}
 \fancyfoot[c]{\thepage}
 \renewcommand{\headrulewidth}{0.2pt}
 \setlength{\headheight}{15pt}
 \fancyhead[r]{\today}
 
 \begin{document}
-\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in, itemsep=1.5em]
+\begin{enumerate}[label = {\bfseries Question \arabic*:}, leftmargin=1in, itemsep=1.5em]
     \item \begin{itemize}
         \item[(a)] $[18] = \Set{4n+2 | n\in \mathbb{Z}}$.
         \item[(b)] $[31] = \Set{4n+2 | n\in \mathbb{Z}}$.
@@ -30,8 +28,20 @@
     \end{itemize}
 
     \item \begin{proof}
-        Need to prove that the relation is reflective, symmetric, and transitive. 
-
+        We prove that $\equiv_n$ on $\mathbb{Z}$ is an equivalence relation by showing that it is reflexive, transitive, and symmetric. Suppose $n \in \mathbb{Z}^{+}$.
+        \begin{description}[leftmargin=2.5cm, style=multiline, font=\bfseries]
+            \item[Reflexive] Let $a$ be an arbitrary element in $\mathbb{Z}$. Clearly, $a-a=0=kn, k\in \mathbb{Z}$. So, $\forall a \in \mathbb{Z}, a \equiv_n a $.
+            \item[Symmetric] Let $a,b$ be arbitrary elements of $\mathbb{Z}$. Suppose $a \equiv_n b$. By definition, $a-b=kn, k\in \mathbb{Z}$. Multiplying the equation by $-1$, we get \begin{center}$b-a=-kn$.\end{center} $-k$ is still an integer, and thus by definition, $b\equiv_n a$.
+            \item[Transitive] Let $a,b,c$ be aribtrary elements of $\mathbb{Z}$. Suppose $a\equiv_n b$ and $b\equiv_n c$. By definition, we have $a-b=kn, k \in \mathbb{Z}$ and $b-c = gn, g \in \mathbb{Z}$. We can add these equations as such:
+            \begin{equation*}
+            \begin{aligned}
+            a - b &= kn \\
+            +\, b - c &= gn \\ \hline
+            a - c &= (k + g)n
+            \end{aligned}
+            \end{equation*}
+            $k+g$ is another integer, and so by definition, we have that $a\equiv_n c$.
+        \end{description}
     \end{proof}
 
     \item \begin{proof}
@@ -51,6 +61,13 @@
     \item \begin{itemize}
         \item[(a)] \begin{proof}
         The theorem given in the proposition is equivalent to claiming that \lq{If $ab$ is even, then $a$ is even or $b$ is even\rq}. We have proven this theorem to be true, so it is the case that if $ab \equiv_2 0$, then $a \equiv_2 0$ or $b \equiv_2 0$.
+        \end{proof}
+        \item[(b)] The answer is no. $10 \times 2 = 20 \equiv_4 0$, but $10 \not\equiv_4 0$ and $2 \not\equiv_4 0$.
+        \item[(c)] The answer to the question will be yes when $n$ is a prime. \begin{proof}
+            Suppose $n$ is a prime, and $a,b \in \mathbb{Z}$. Also suppose that $ab \equiv_n 0$. This is equivalent to saying that $n \mid ab$. Because $n$ is prime, $\gcd(a,n)$ is either 1 or $n$. Consider two cases: \begin{itemize}
+            \item[] ($\gcd(a,n) = n$). Then, $n \mid a$.
+            \item[] ($\gcd(a,b) = 1$). luke said to appeal to the fundamental theorem of arithemtic
+            \end{itemize}
         \end{proof}
     \end{itemize}
         
