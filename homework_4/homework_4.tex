@@ -32,15 +32,11 @@
         \begin{description}[leftmargin=2.5cm, style=multiline, font=\bfseries]
             \item[Reflexive] Let $a$ be an arbitrary element in $\mathbb{Z}$. Clearly, $a-a=0=kn, k\in \mathbb{Z}$. So, $\forall a \in \mathbb{Z}, a \equiv_n a $.
             \item[Symmetric] Let $a,b$ be arbitrary elements of $\mathbb{Z}$. Suppose $a \equiv_n b$. By definition, $a-b=kn, k\in \mathbb{Z}$. Multiplying the equation by $-1$, we get \begin{center}$b-a=-kn$.\end{center} $-k$ is still an integer, and thus by definition, $b\equiv_n a$.
-            \item[Transitive] Let $a,b,c$ be aribtrary elements of $\mathbb{Z}$. Suppose $a\equiv_n b$ and $b\equiv_n c$. By definition, we have $a-b=kn, k \in \mathbb{Z}$ and $b-c = gn, g \in \mathbb{Z}$. We can add these equations as such:
-            \begin{equation*}
-            \begin{aligned}
-            a - b &= kn \\
-            +\, b - c &= gn \\ \hline
-            a - c &= (k + g)n
-            \end{aligned}
-            \end{equation*}
-            $k+g$ is another integer, and so by definition, we have that $a\equiv_n c$.
+            \item[Transitive] Let $a,b,c$ be aribtrary elements of $\mathbb{Z}$. Suppose $a\equiv_n b$ and $b\equiv_n c$. By definition, we have $a-b=kn, k \in \mathbb{Z}$ and $b-c = gn, g \in \mathbb{Z}$. Then, $b=a-nk$. Subbing in, we get that \begin{center}
+                $a-kn-c=gn$\\
+                $a-c=(k+g)n$
+            \end{center}
+           By definition, we have $a\equiv_n c$.
         \end{description}
     \end{proof}
 
