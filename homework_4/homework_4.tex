@@ -24,7 +24,7 @@
 \begin{enumerate}[label = {\bfseries Question \arabic*:}, leftmargin=1in, itemsep=1.5em]
     \item \begin{itemize}
         \item[(a)] $[18] = \Set{4n+2 | n\in \mathbb{Z}}$.
-        \item[(b)] $[31] = \Set{4n+2 | n\in \mathbb{Z}}$.
+        \item[(b)] $[31] = \Set{4n+3 | n\in \mathbb{Z}}$.
         \item[(c)] There are 4 equivalence classes. 
     \end{itemize}
 
@@ -39,6 +39,7 @@
             \end{center}
            By definition, we have $a\equiv_n c$.
         \end{description}
+        Thus, we are done.
     \end{proof}
 
     \item \begin{proof}
@@ -108,10 +109,10 @@
                 0 & 1 & \frac{-c}{ad-bc} & \frac{a}{ad-bc}
                 \end{array} \right]$\\
             \end{center}
-            Let the resultant augmented matrix $A'$. Then, we compute
+            Let the resultant augmented matrix be $A'$. Then, we compute
             \begin{center}
             $AA' = E$ and $A'A = E$.
-            \end{center} $A'$ exists only when $ad-bc\neq 0$, which is true for all $m\in \text{GL}_2(\mathbb{R})$. In other words, $\text{GL}_2(\mathbb{R}) = \Set{A \in \text{Mat}_{2\times 2}(\mathbb{R}) | A \text{ is invertible}}$. 
+            \end{center} $A'$ exists only when $ad-bc\neq 0$, which is true for all $M\in \text{GL}_2(\mathbb{R})$. In other words, $\text{GL}_2(\mathbb{R}) = \Set{A \in \text{Mat}_{2\times 2}(\mathbb{R}) | A \text{ is invertible}}$. 
             \begin{lemma}
             See the result of problem 5.
             \end{lemma}
@@ -119,14 +120,26 @@
         \end{proof}
 
         \item \mbox{} \begin{itemize}
-            \item[(a)] We show three requirements.\begin{description}[leftmargin=2.5cm, font=\bfseries\boldmath]
+            \item[(a)] \begin{proof} We show that $R$ is reflexive, symmetric, and transitive.\begin{description}[leftmargin=2.5cm, font=\bfseries\boldmath]
                 \item[Reflexive] $\ast$ is unital, so there is an identity element $e$. $e \ast e = e$, so $e$ is invertible and is its own inverse. So, $a=e\ast a\ast e$. Therefore, $R$ is reflexive.
                 \item[Symmetric] Let $a,b \in A$ and $aRb$. Then, we compute \begin{center}
                     $b=t^{-1}\ast a\ast t$ \\
                     $t^{-1}\ast b = a\ast t$\\
                     $t^{-1}\ast b\ast t=a$.
                 \end{center} Let $t^{-1} = t'$. $t'\in A$ and is invertible. Thus, $bRa$, and $R$ is symmetric. 
+                \item[Transitive] Let $a,b,c \in A$. Suppose $aRb$ and $bRc$. Then, $b=t^{-1}\ast a\ast t$ and $c=u^{-1}\ast b \ast u$ such that $t,u\in A$. Plugging in $b$ for $a$, we get that \begin{center}
+                    $c=u^{-1}\ast t^{-1}\ast a\ast t \ast u$.
+                \end{center} Let $v = t\ast u$. We compute that \begin{center}
+                    $(t\ast u) \ast (u^{-1}\ast t^{-1}) = t \ast t^{-1} = e$.
+                \end{center} Thus, $u^{-1}\ast t^{-1} = v^{-1}$, and so $c=v^{-1}\ast a\ast v, v\in A$. Thus, $R$ is transitive.
             \end{description}
+            So, $R$ is an equivalence relation.
+        \end{proof}
+
+        \item[(b)] If $\ast$ is commutative, then the relation $aRb := b=t^{-1}\ast a\ast t, a,b,t\in A$ can be simplified to $b=a$. This means that two elements are related only if they are the same element. Thus, each element is its own equivalence class. Formally, the equivalence classes are given by $\Set{[a]={a}|a\in A}$.
+        \item[(c)] We compute that the equivalence classes of $D_6$ are the following: \begin{center}
+            $[e]=\Set{e}, [r]=\Set{r, r^2}, [s]=\Set{s, sr, sr^2}$.
+        \end{center}
         \end{itemize}
 \end{enumerate}
 \end{document}
