@@ -61,12 +61,7 @@
         The theorem given in the proposition is equivalent to claiming that \lq{If $ab$ is even, then $a$ is even or $b$ is even\rq}. We have proven this theorem to be true, so it is the case that if $ab \equiv_2 0$, then $a \equiv_2 0$ or $b \equiv_2 0$.
         \end{proof}
         \item[(b)] The answer is no. $10 \times 2 = 20 \equiv_4 0$, but $10 \not\equiv_4 0$ and $2 \not\equiv_4 0$.
-        \item[(c)] The answer to the question will be yes when $n$ is a prime. \begin{proof}
-            Suppose $n$ is prime. Let $a,b \in \mathbb{Z}$. We proceed via the contrapositive, which is the statement \begin{center}
-                if $a\not\equiv_n 0$ and $b\not\equiv_n 0$, then $ab\not\equiv_n 0$.
-            \end{center}
-            Then, $n$ is not a prime factor of either $a$ or $b$. 
-        \end{proof}
+        \item[(c)] The answer to the question will be yes when $n$ is a prime. 
     \end{itemize}
     
     \item \begin{proof} We show three requirements.
@@ -80,7 +75,7 @@
         \end{description}
     \end{proof}
 
-    \item \begin{proof} We first show that matrix multiplcation $(\ast)$is a unital binary operation on $\text{Mat}_{2\times 2}(\mathbb{R})$.
+    \item \begin{proof} We first show that matrix multiplication $(\ast)$ is a unital binary operation on $\text{Mat}_{2\times 2}(\mathbb{R})$.
                 \begin{description}[leftmargin=1cm, style=multiline, font=\bfseries\boldmath]
                     \item[1] We are given that $\ast$ is associative.
                     \item[2] Let $E = \begin{bmatrix}
@@ -136,7 +131,7 @@
             So, $R$ is an equivalence relation.
         \end{proof}
 
-        \item[(b)] If $\ast$ is commutative, then the relation $aRb := b=t^{-1}\ast a\ast t, a,b,t\in A$ can be simplified to $b=a$. This means that two elements are related only if they are the same element. Thus, each element is its own equivalence class. Formally, the equivalence classes are given by $\Set{[a]={a}|a\in A}$.
+        \item[(b)] If $\ast$ is commutative, then the relation $aRb := b=t^{-1}\ast a\ast t, a,b,t\in A$ can be simplified to $b=a$. This means that two elements are related only if they are the same element. Thus, each element is its own equivalence class. Formally, the equivalence classes are given by $\Set{[a]=\{a\}|a\in A}$.
         \item[(c)] We compute that the equivalence classes of $D_6$ are the following: \begin{center}
             $[e]=\Set{e}, [r]=\Set{r, r^2}, [s]=\Set{s, sr, sr^2}$.
         \end{center}

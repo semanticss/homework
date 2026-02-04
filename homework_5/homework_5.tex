@@ -26,10 +26,17 @@
        \item For the following proofs, let $R$ be a commutative ring and $x,y,z\in R$.\begin{itemize}
         \item[(a)] \begin{proof} We show that $(-x)(-y) + (-(xy)) = 0$, and thus $(-x)(-y)=xy$. As was shown in Proposition 5.7 in the notes, $-(xy) = (-x)y$. So, we compute that \begin{center}
             $(-x)(-y) + (-(xy)) = (-x)(-y) + (-x)y = (-x)(-y+y)=(-x)\cdot 0 = 0$.
-        \end{center} Thus, we are done.
-        \end{proof}
+        \end{center} Thus, we are done. \end{proof}
 
-        \item[(b)] 
-       \end{itemize}         
+        \item[(b)] \begin{proof}
+            Considering $x(y-z) = x(y+(-z))$, we can appeal to the distributive property of commutative rings. So, $x(y+(-z))=xy+x(-z)$. Appealing to Proposition 5.7 in the notes, we have that $x(-z)=-(xz)$, we get that $xy+x(-z)=xy-xz$.
+            \end{proof}
+        \item[(c)] \begin{proof}
+            Considering $-1(x)$, we can appeal to Proposition 5.7 in the notes, and rewrite the expression as $-(1x)$. Appealing to $R$'s multiplicative identity, which is $1$, we know $1x = x, \forall x\in R$. Thus, $-(1x)=-x$.
+        \end{proof}
+       \end{itemize}    
+       \item \begin{proof}
+        Suppose $R$ is an ordered ring, $x,y,z \in R, x < y, 0 < z$. It follows that $y-x\in R^+$ and $z\in R^+$. Appealing to the closure of positives, $(y-x)(z)\in R^+$. Distributing, we get that $yz-xz\in R^+$. Thus, $xz<yz$.
+       \end{proof}  
 \end{enumerate}
 \end{document}
