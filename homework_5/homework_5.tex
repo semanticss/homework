@@ -38,5 +38,45 @@
        \item \begin{proof}
         Suppose $R$ is an ordered ring, $x,y,z \in R, x < y, 0 < z$. It follows that $y-x\in R^+$ and $z\in R^+$. Appealing to the closure of positives, $(y-x)(z)\in R^+$. Distributing, we get that $yz-xz\in R^+$. Thus, $xz<yz$.
        \end{proof}  
+
+       \item q4
+       \item \begin{proof} We proceed by induction.
+       \begin{description}[leftmargin=2.5cm, font=\bfseries]
+            \item[BC] When $n=0$, we have that $\sum\limits_{k=0}^{0} k^2 = 0 = \left. \frac{n(n+1)(2n+1)}{6}\right|_{n=0}$. So, the base case is true.
+            \item[IS] Assume $\sum\limits_{k=0}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}$. Consider $\sum\limits_{k=0}^{n+1} k^2$. We can rewrite this as \begin{center}$\sum\limits_{k=0}^{n+1} k^2 = (\sum\limits_{k=0}^{n} k^2)+ {(n+1)}^2 = \frac{n(n+1)(2n+1)}{6} + {(n+1)}^2$.\end{center} 
+            Rearranging, we find that this is equivalent to \\ $\frac{2n^3+9n^2+13n+6}{6}$. Thus, \begin{center}
+                $(\sum\limits_{k=0}^{n} k^2)+ {(n+1)}^2 = \frac{2n^3+9n^2+13n+6}{6}$.
+            \end{center} We find that this is further equivalent to $\frac{(n+1)(n+2)(2(n+1))}{6}$. Thus, 
+        \end{description}
+        Thus, $\sum\limits_{k=0}^{0} k^2 = \frac{n(n+1)(2n+1)}{6}$ for all $n \in \mathbb{N}$.
+       \end{proof}
+
+       \item \begin{proof} We proceed by induction.
+        \begin{description}[leftmargin=2.5cm, font=\bfseries]
+            \item[BC] When $n=1$, we have that $\sum\limits_{k=0}^{1} = r+1 = \frac{r^{(1+1)}-1}{r-1}$.
+            \item[IS] 
+        \end{description}
+       \end{proof}
+
+       \item We claim that $\sum\limits_{k=1}^{n}(2k-1) = n^2, \forall n\in \mathbb{Z}$.\begin{proof}
+            Summation is a linear operator, so $\sum\limits_{k=1}^{n}(2k-1) = 2\sum\limits_{k=1}^{n}k - \sum\limits_{k=1}^{n}1$. The first term 
+            is a known result from class: $\sum\limits_{k=1}^{n}k = \frac{n(n+1)}{2}$. The second term is simply $n$. So, we get that $\sum\limits_{k=1}^{n}(2k-1)=n(n+1)-n=n^2$. Ask about in office hours if this is sufficient rigor!
+       \end{proof}
+
+       \item We claim that $\sum\limits_{k=1}^{n}\frac{1}{k(k+1)} = \frac{n}{n+1}, , \forall n\in \mathbb{Z}$. We provide two different proofs. \begin{proof}
+        First, we can proceed via algebraic manipulation. We find that $\frac{1}{k(k+1)} = \frac{1}{k}-\frac{1}{k+1}$. Rewriting, we find that the sum of these terms is a basic telescopic series: \begin{center}
+            $\sum\limits_{k=1}^{n}(\frac{1}{k} - \frac{1}{k+1})=(\frac{1}{1} - \frac{1}{2})+(\frac{1}{2}-\frac{1}{3})+(\frac{1}{3}-\frac{1}{4})\ldots (\frac{1}{n}-\frac{1}{n+1})$.
+        \end{center} We see that every term cancels with its opposite, other than $1$ and $\frac{1}{n+1}$. Thus, $\sum\limits_{k=1}^{n}(\frac{1}{k} - \frac{1}{k+1})=1-\frac{1}{n+1}=\frac{n}{n+1}$.
+       \end{proof}
+
+       \begin{proof}
+        Another method of proof is by induction.
+        \begin{description}[leftmargin=2.5cm, font=\bfseries]
+            \item[BC] When $n=1$, we have that $\sum\limits_{k=1}^{1} = \frac{1}{2} = \left. \frac{n}{n+1}\right|_{n=1}$.
+            \item[IS] Assume that $\sum\limits_{k=1}^{n}\frac{1}{k(k+1)} = \frac{n}{n+1}$. Consider $\sum\limits_{k=1}^{n+1}\frac{1}{k(k+1)}$. This can be rewritten: \begin{center}
+                $\sum\limits_{k=1}^{n+1}\frac{1}{k(k+1)} = \sum\limits_{k=1}^{n}\frac{1}{k(k+1)} + \frac{1}{(n+1)(n+2)} = \frac{{(n+1)}^2}{(n+1)(n+2)}$.
+            \end{center} Simplifying, we see that $\frac{{(n+1)}^2}{(n+1)(n+2)} = \frac{n+1}{n+2}$. So, $\sum\limits_{k=1}^{n+1}\frac{1}{k(k+1)} = \frac{n+1}{n+2}$. Thus, we are done.
+        \end{description}
+       \end{proof}
 \end{enumerate}
 \end{document}
