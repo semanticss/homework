@@ -4,6 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{fancyhdr}
 \usepackage{amsthm}
+\newtheorem{lemma}{Lemma}
 \usepackage{braket}
 \usepackage{amssymb}
 \usepackage{tikz}
@@ -22,7 +23,17 @@
 
 \begin{document}
 \begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
-       \item todo
+       \item \begin{itemize}
+        \item[(a)] Using Binet's formula, we compute that \begin{center}
+            $f_1 = \frac{\alpha - \beta}{\alpha - \beta} = \frac{\sqrt{5}}{\sqrt{5}}=1$, and $f_2 = \frac{\alpha^2-\beta^2}{\alpha -\beta}=\frac{\frac{1+\sqrt{5}}{2}+1-\frac{1-\sqrt{5}}{2}-1}{\sqrt{5}}=\frac{\sqrt{5}}{\sqrt{5}}=1$.
+        \end{center}
+        \item[(c)] \begin{proof} Assume $\alpha = \frac{1+\sqrt{5}}{2}$, $\beta = \frac{1-\sqrt{5}}{2}$, and $f_n = \frac{\alpha^n-\beta^n}{\alpha -\beta}$. Consider $f_{n+1} = f_n + f_{n-1}$. This can rewritten as \begin{center}
+            $f_n+f_{n-1}=\frac{\alpha^n -\beta^n}{\alpha - \beta}+\frac{\alpha^{n-1} -\beta^{n-1}}{\alpha - \beta} = \frac{\alpha^{n-1}(\alpha + 1) -\beta^{n-1}(\beta +1)}{\alpha - \beta}$.
+        \end{center} We know that $\alpha + 1 = \alpha^2$ and $\beta + 1=\alpha^2$, so we can rewrite the expression as \begin{center}
+            $\frac{\alpha^{n-1}(\alpha + 1) -\beta^{n-1}(\beta +1)}{\alpha - \beta} = \frac{\alpha^{n-1}\alpha^2 -\beta^{n-1}\beta^2}{\alpha - \beta} = \frac{\alpha^{n+1} -\beta^{n+1}}{\alpha - \beta}$.
+        \end{center} Thus, we are done.
+    \end{proof}
+.       \end{itemize}
        \item For the following proofs, let $R$ be a commutative ring and $x,y,z\in R$.\begin{itemize}
         \item[(a)] \begin{proof} We show that $(-x)(-y) + (-(xy)) = 0$, and thus $(-x)(-y)=xy$. As was shown in Proposition 5.7 in the notes, $-(xy) = (-x)y$. So, we compute that \begin{center}
             $(-x)(-y) + (-(xy)) = (-x)(-y) + (-x)y = (-x)(-y+y)=(-x)\cdot 0 = 0$.
@@ -53,8 +64,10 @@
 
        \item \begin{proof} We proceed by induction.
         \begin{description}[leftmargin=2.5cm, font=\bfseries]
-            \item[BC] When $n=1$, we have that $\sum\limits_{k=0}^{1} = r+1 = \frac{r^{(1+1)}-1}{r-1}$.
-            \item[IS] 
+            \item[BC] When $n=1$, we have that $\sum\limits_{k=0}^{1}r^k = r+1 = \frac{r^{(1+1)}-1}{r-1}$.
+            \item[IS] Assume that $\sum\limits_{k=0}^{n}r^k = \frac{r^{n+1}-1}{r-1}$. Consider $\sum\limits_{k=0}^{n+1}r^k$. This can be rewritten as $(\sum\limits_{k=0}^{n}r^k) + r^{n+1}$. We know that $\sum\limits_{k=0}^{n}r^k = \frac{r^{n+1}-1}{r-1}$, we can rewrite as \begin{center}
+                $\frac{r^{n+1}-1}{r-1} + r^{n+1}=\frac{r^{n+1}-1+r^{n+2}-r^{n+1}}{r-1}=\frac{r^{n+2}-1}{r-1}$.
+            \end{center} Thus, we are done.
         \end{description}
        \end{proof}
 
@@ -71,11 +84,21 @@
 
        \begin{proof}
         Another method of proof is by induction.
-        \begin{description}[leftmargin=2.5cm, font=\bfseries]
+        \begin{description}[leftmargin=1cm, font=\bfseries]
             \item[BC] When $n=1$, we have that $\sum\limits_{k=1}^{1} = \frac{1}{2} = \left. \frac{n}{n+1}\right|_{n=1}$.
             \item[IS] Assume that $\sum\limits_{k=1}^{n}\frac{1}{k(k+1)} = \frac{n}{n+1}$. Consider $\sum\limits_{k=1}^{n+1}\frac{1}{k(k+1)}$. This can be rewritten: \begin{center}
                 $\sum\limits_{k=1}^{n+1}\frac{1}{k(k+1)} = \sum\limits_{k=1}^{n}\frac{1}{k(k+1)} + \frac{1}{(n+1)(n+2)} = \frac{{(n+1)}^2}{(n+1)(n+2)}$.
-            \end{center} Simplifying, we see that $\frac{{(n+1)}^2}{(n+1)(n+2)} = \frac{n+1}{n+2}$. So, $\sum\limits_{k=1}^{n+1}\frac{1}{k(k+1)} = \frac{n+1}{n+2}$. Thus, we are done.
+            \end{center} Simplifying, we see that $\frac{{(n+1)}^2}{(n+1)(n+2)} = \frac{n+1}{n+2}$. So, $\sum\limits_{k=1}^{n+1}\frac{1}{k(k+1)} = \frac{n+1}{n+2}$.
+        \end{description}
+        Thus, we are done.
+       \end{proof}
+       \item \begin{proof} We proceed by induction.
+        \begin{description}[leftmargin=0.7cm, font=\bfseries]
+            \item[BC] When $n=7$, $7!=5040>2187=3^7$. Thus, the base case is true.
+            \item[IS] Assume that $n!>3^n$. Then, consider $(n+1)!$ and $3^{n+1}$. These can be rewritten as $(n+1)n!$ and $3(3^n)$, respectively.
+            \begin{lemma}
+                Let $R$ be an ordered ring, and take $x,y,w,z \in R$. Then, if $y>x$ and $w,z > 0$, and $w>z$, then $.$
+            \end{lemma}
         \end{description}
        \end{proof}
 \end{enumerate}
