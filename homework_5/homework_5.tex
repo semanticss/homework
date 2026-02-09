@@ -50,7 +50,11 @@
         Suppose $R$ is an ordered ring, $x,y,z \in R, x < y, 0 < z$. It follows that $y-x\in R^+$ and $z\in R^+$. Appealing to the closure of positives, $(y-x)(z)\in R^+$. Distributing, we get that $yz-xz\in R^+$. Thus, $xz<yz$.
        \end{proof}  
 
-       \item q4
+       \item We first prove that there is no largest element of $\mathbb{Z}$. \begin{proof}
+            For the sake of contradiction, assume that there is a largest element of $\mathbb{Z}$ called $a$ such that $a\in \mathbb{Z}^+$. Let $x\in \mathbb{Z}^+$. Consider $x+a$; by closure of the positives, $x+a\in \mathbb{Z}^+$.
+            Consider $(x+a)-a = x + a + (-a) = x \in \mathbb{Z}^+$. Thus, $a+x > a$, which is a contradiction because we assumed $a$ was the largest element of $\mathbb{Z}$. Thus, there is no largest element of $\mathbb{Z}$.
+       \end{proof}
+
        \item \begin{proof} We proceed by induction.
        \begin{description}[leftmargin=2.5cm, font=\bfseries]
             \item[BC] When $n=0$, we have that $\sum\limits_{k=0}^{0} k^2 = 0 = \left. \frac{n(n+1)(2n+1)}{6}\right|_{n=0}$. So, the base case is true.
@@ -97,8 +101,12 @@
             \item[BC] When $n=7$, $7!=5040>2187=3^7$. Thus, the base case is true.
             \item[IS] Assume that $n!>3^n$. Then, consider $(n+1)!$ and $3^{n+1}$. These can be rewritten as $(n+1)n!$ and $3(3^n)$, respectively.
             \begin{lemma}
-                Let $R$ be an ordered ring, and take $x,y,w,z \in R$. Then, if $y>x$ and $w,z > 0$, and $w>z$, then $.$
+                If $x>y>0$ and $z>w>0$, then $xz>yw$.\begin{proof}
+                    We showed in Question 3 that if $x>y$ and $z>0$, then $xz>yz$. Consider $yz-yw=y(z-w)$. By assumption we have $z>w$, so $z-w\in \mathbb{Z}^+$. Also by assumption, $y\in \mathbb{Z}$. Appealing
+                    to the closure of the positives, $y(z-w)\in \mathbb{Z}^+$. Thus, by definition, $yz>yw$. So, by transitivity, $xz>yz>yw \implies xz > yw$.                \end{proof}
             \end{lemma}
+
+            We can see that $n+1 > 3$ when $n\geq 7$, and we have that $n! > 3^n$ for $n\geq 7$ as an assumption. Thus, by Lemma 1, we have that $(n+1)n! > 3(3^n)$ for $n\geq 7$. Thus, $(n+1)! > 3^{n+1}$ for $n\geq 7$, so we are done.
         \end{description}
        \end{proof}
 \end{enumerate}
