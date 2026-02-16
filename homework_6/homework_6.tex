@@ -23,51 +23,58 @@
 
 \begin{document}
 \begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
-    \item     lowk wrap these all in a proof env type splish
+    \item
 \begin{itemize}
-        \item[(a)] We induct over $n$.\begin{description}
+        \item[(a)] \begin{proof}We induct over $n$.\begin{description}
             \item[BC] We compute that when $n=1$, $f_{4n}=f_4=f_3+f_2=2+1=3$, which is a multiple of 3.
             \item[IS] Assume that $f_{4n}$ is a multiple of 3. Consider $f_{4(n+1)}=f_{4n+4}$. We compute \begin{center}
                 $f_{4n+4}=f_{4n+3}+f_{4n+2}=2\cdot f_{4n+2}+f_{4n+1}=3\cdot f_{4n+1}+f_{4n}$.
             \end{center} We can see that we $f_{4(n+1)}$ can be expressed as a sum of a multiple of 3 and $f_{4n}$, which is a multiple of 3 by assumption.
             Thus, $f_{4(n+1)}$ is also a multiple of 3.
         \end{description}
-        
-        \item[(b)] We induct over $n$.\begin{description}
+    \end{proof}
+        \item[(b)] \begin{proof}We induct over $n$.\begin{description}
             \item[BC] We compute that when $n=1$, $f_{5n}=f_5=f_4+f_3=5$, which is a multiple of 5.
-            \item[IS] Assume $f_{5n}$ is a multiple of 5. Cos
-        \end{description}
+            \item[IS] Assume $f_{5n}, n\in \mathbb{N}$ is a multiple of 5. Consider $f{5(n+1)}=f_{5n+5}$. Similarly to (a), we can rewrite this as:\begin{center}
+                $f_{5(n+1)}=f_{5n+5}=5f_{5n+1}+3f_{5n}$.
+            \end{center} We can see that that $f_{5(n+1)}$ can be expressed as a sum of a multiple of 5 and a 3 times $f_{5n}$, which itself is a multiple of 5. Thus, $f_{5(n+1)}$ is a multiple of 5.
+        \end{description} Thus, we are done.
+    \end{proof}
 
-        \item[(c)] We induct over $n$.\begin{description}
-            \item[BC] ok
+        \item[(c)] \begin{proof}We induct over $n$.\begin{description}
+            \item[BC] We compute that when $n=2$, $\sum\limits_{k=1}^{n-1}f_n=1=f_{n+1}-1$.
             \item[IS] Assume $f_1+f_2+\cdots+f_{n-1}=\sum\limits_{k=1}^{n-1}f_k=f_{n+1}-1$. Consider $\sum\limits_{k=1}^{(n-1)+1}f_k$. We then have \begin{center}
                 $f_1+f_2+\cdots+f_{(n+1)-1}=f_1+f_2+\cdots+f_{n-1}+f_n$.
             \end{center} The sum of the first $n-1$ terms evaluate to $f_{n+1}-1$ by assumption. So, we can rewrite as \begin{center}
                 $f_{n+1}-1+f_n=f_{n+2}-1$.
             \end{center} Thus, we are done.
         \end{description}
+    \end{proof}
 
-        \item[(d)] We induct over $n$.\begin{description}
-            \item[BC]ok
+        \item[(d)] \begin{proof} We induct over $n$.\begin{description}
+            \item[BC] We compute that when $n=1$, $\sum\limits_{k=1}^{1}f_{2n-1}=1=f_2$.
             \item[IS] Assume $f_1+f_3+\cdots+f_{2n-1} = \sum\limits_{k=1}^{n}f_{2k-1}=f_{2n}$. Consider $\sum\limits_{k=1}^{n+1}f_{2k-1}$. Using our assumption, we can rewrite this as \begin{center}
                 $\sum\limits_{k=1}^{n+1}f_{2k-1}=\sum\limits_{k=1}^{n}f_{2k-1} + f_{2n+1}=f_{2n}+f_{2n+1}$.
             \end{center} We see that $f_{2n}+f_{2n+1}=f_{2(n+1)}$. Thus, we are done.
         \end{description}
-        \item[(e)] We induct over $n$.\begin{description}
-            \item[BC]ok
+    \end{proof}
+        \item[(e)] \begin{proof}We induct over $n$.\begin{description}
+            \item[BC]We compute that when $n=1$, $\sum\limits_{k=1}^1f_{2n}=1=f_3-1$.
             \item[IS] Assume that $f_2+f_4+\cdots+f_{2n}=\sum\limits_{k=1}^{n}f_{2k}=f_{2n+1}-1$. Consider $\sum\limits_{k=1}^{n+1}f_{2k}$. Using our assumption, we can rewrite this as \begin{center}
                 $\sum\limits_{k=1}^{n+1}f_{2k}=\sum\limits_{k=1}^{n}f_{2k}+f_{2n+2}=f_{2n+1}-1+f_{2n+2}$.
             \end{center} We see that $f_{2n+1}-1+f_{2n+2}=f_{2n+3}-1=f_{2(n+1)+1}-1$. Thus, we are done.
         \end{description}
-        \item[(f)] We induct over $n$.\begin{description}
-            \item[BC] ok
+    \end{proof}
+        \item[(f)] \begin{proof}We induct over $n$.\begin{description}
+            \item[BC] We compute that when $n=1$, $\sum\limits_{k=1}^1{f_k}^2=1=f_1f_{n+1}$.
             \item[IS] Assume that ${f_1}^2+{f_2}^2+\cdots+{f_n}^2=\sum\limits_{k=1}^{n}{f_k}^2={f_n}f_{n+1}$. Consider $\sum\limits_{k=1}^{n+1}{f_k}^2$. Using our assumption, we can rewrite this as \begin{center}
                 $\sum\limits_{k=1}^{n+1}{f_k}^2=\sum\limits_{k=1}^{n}{f_k}^2+{f_{n+1}}^2={f_n}{f_{n+1}}+{f_{n+1}}^2$.
             \end{center} We can rewrite this as $f_{n+1}(f_n+f_{n+1})={f_{n+1}}{f_{n+2}}$. Thus, we are done.
         \end{description}
+    \end{proof}
         \item[(g)] \begin{proof}
             We induct over $n$.\begin{description}
-                \item[BC] ok
+                \item[BC] We compute that when $n=1$, $f_1 = 1$, which is odd.
                 \item[IS] Assume $n \not\equiv 0 \pmod{3}$, and $f_n$ is odd. If $n \not\equiv 0 \pmod{3}$, there are two cases: $n \equiv 1 \pmod{3}$ or $n \equiv 2 \pmod{3}$. We need not consider both cases; we know that for any $n$ such that $n \not\equiv 0 \pmod{3}$, $n+3 \not\equiv 0 \pmod{3}$. WLOG, consider $f_{n+3}$.
                 We can rewrite this as\begin{center} $f_{n+3}=f_{n+2}+f_{n+1}=2\cdot f_{n+1}+f_n$.\end{center} By assumption, $f_n$ is odd, and thus $f_{n+3}$ is the sum of an even and an odd, which is always odd.
             \end{description}
@@ -78,5 +85,22 @@
         \item[(a)] Using the Euclidean Algorithm, we find that $\gcd(775,682) = 31= 8 \cdot 682 - 7\cdot 775$.
         \item[(b)] Similarly, we find that $\gcd(562, 243) = 1 = 18\cdot 562 + 37\cdot 243$. 
     \end{itemize}
+    \item \begin{proof} We show that $S=d\mathbb{Z}$ by showing set equality.\begin{itemize}
+        \item[($\subseteq$)] Let $m$ be an element of $d\mathbb{Z}$. So, $m=kd, k \in\mathbb{Z}$. By Bézout's Identity, $\gcd(a,b)=d$ can be expressed as $ax+by=d$ for some $x,y \in \mathbb{Z}$. So, $m=k(ax+by)=(ka)x+(kb)y$. $ka,kb \in \mathbb{Z}$. Thus, $m\in S$, and $d\mathbb{Z} \subseteq S$.
+        \item[($\supseteq$)] Let $n$ be an element of $S$. Thus, $n=ax+by$ for some $x,y \in S$. Let $d=\gcd(a,b)$. By definition, $d\mid a$ and $d\mid b$. Thus, there exist $ k, k'\in \mathbb{Z}$ such that $a=dk$ and $b=dk'$. Subbing in,
+        we get that $n=(dk)x+(dk')y=d(kx+yk')$. Thus, $n\in d\mathbb{Z}$. So, $S \subseteq d\mathbb{Z}$.
+    \end{itemize}
+    Thus, we are done.
+    \end{proof}
+    \item \begin{proof}
+    By the Bézout Identity, there exist $x,y,x',y' \in \mathbb{Z}$ such that $ax+cy=1$ and $bx'+cy'=1$. We multiply these equations against each other to obtain:\begin{center}
+        $(ax+cy)(bx'+cy')=abxx'+axcy'+cybx'+c^2yy'=ab(xx')+c(axy'+ybx'+cyy')=1$.
+    \end{center} Every quantity is an integer, and thus we have a linear combination of $ab$ and $c$ that sums to 1. Thus, $\gcd(ab,c)=1$.
+    \end{proof}
+        
+    \item The error is assuming that $a^{n-1}$ actually exists. There is no guarantee that the value of $n$ is not less than or equal to 0.
+    \item We can see that the Well-Ordering Principle and induction are closely related by thinking about the set of all the integers that make the open sentence $P(n)$ false. If we have $k$ as the least element, then $P(k-1)$ must be true. 
+    Then, using the inductive step, we see that $P(k)$ must be true, but $k$ was an element of the set of the integers that make $P(n)$ false, so we have a contradicition. Using this method,
+    the base case and inductive step are sort of like holding a car whose tires are already spinning above the road, and then dropping it, and then it zooms off.
 \end{enumerate}
 \end{document}
