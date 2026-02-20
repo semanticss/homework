@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\newtheorem{lemma}{Lemma}
+\usepackage{braket}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+
+
+\pagestyle{fancy}
+\fancyhead[l]{Hudson Benites}
+\fancyhead[c]{Homework \#7}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\setlength{\headheight}{15pt}
+\fancyhead[r]{\today}
+
+\begin{document}
+\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
+\item \begin{proof}
+    Suppose $a,b,c\in \mathbb{Z}^{+}$ and $a\mid c$ and $b\mid c$. Then, $c=(na)(db)$ for some $n,d\in \mathbb{Z}\setminus\{0\}$, and similarly $lcm(a,b)=m=(ka)(lb)$ for some $k,l\in \mathbb{Z}\setminus\{0\}$. By
+    Theorem 5.23 in the notes, there exist $q,r \in \mathbb{Z}$ such that $0\leq r < b$ and $c=qm+r$. Take $q=\frac{nd}{kl}$. Subbing in, we get $nd(ab)=\frac{nd}{kl}(kl)(ab)$. Simplifying, we get $nd=nd+r$, so $r=0$. If
+    $r=0$, it follows that $m\mid c$.
+\end{proof}
+
+\item \begin{proof}
+    Let $p,q \in \mathbb{Z}^{+}$ be prime, and $p\mid q$. $p\mid q$ means that $q=kp, k\in \mathbb{Z}$. $q\mid kp$, and by the definition of primality, we must have $q\mid p$ or $q\mid k$. If $q\mid p$, we are done because now we have
+    $p\mid q$ and $q\mid p$, and by the antisymmetry of $\mid$, $p=q$. If $q\mid k$, then, $k=dq, d\in \mathbb{Z}$. Plugging in to $q=kp$, get get $q=(dq)p$. Cancelling, we get $1=dp$. Over the integers, this 
+    only occurs when $p=\pm 1$, which is a contradiction because neither -1 or 1 is a prime, and we have $p$ prime by assumption. Thus, we are done.
+\end{proof}
+
+\item Rearranging, we have $lcm(a,b) = \frac{ab}{\gcd(a,b)}$. By the Euclidean algorithm, we get that $\gcd(1495, 650) = 65$. Plugging in, we get that $lcm(a,b)=\frac{1495 \cdot 650}{65}=14,950$.\par Using prime factorization, 
+    we have that the prime factorization of 1495 and 650 is $1495 = 5\cdot 13\cdot 23$ and $650 = 2\cdot 5^2\cdot 13$. Using the least common multiple algorithm, we take term of every prime factor that appears in either 1495 or 650 that has the maximum power between the two. Thus, we have $2\cdot 5^2\cdot 13\cdot 23 = 14,950$ also.
+
+\item\begin{proof}
+    By the Fundamental Theorem of Arithemtic, $b^2={p_1}^{2f_1}\cdots {p_k}^{2f_k}$ and $a^2={p_1}^{2e_1}\cdots {p_k}^{2e_k}$. Also, $b^2=na^2, n\in \mathbb{Z}$. We can also write $n$ as a product of primes, so we get\begin{center}
+        ${p_1}^{2f_1}\cdots {p_k}^{2f_k}=({p_1}^{d_1}\cdots {p_k}^{d_k})(a^2={p_1}^{2e_1}\cdots {p_k}^{2e_k})$.
+    \end{center} Expanding, we get that\begin{center}
+        ${p_1}^{2f_1}\cdots {p_k}^{2f_k}={p_1}^{2e_1+d_1}\cdots {p_k}^{2e_k+d_k}$.
+    \end{center} Also by the Fundamental Theorem of Arithemtic, prime factorization is unique, so ordering correctly, for all $i$, $2f_i = 2e_i + d_i$. $d_i \geq 0$, so $2f_i \geq 2e_i$ and $f_i \geq e_i$. 
+    Appealing to Remark 5.20 in the notes, we now have that $a\mid b$.
+\end{proof}
+
+
+\item\begin{itemize}
+    \item[(a)] Let $x$ be an even integer. Modulo 8, the possible values for $x$ are $0,2,4,6$. We compute the square of each: 0, 4, 16, and 36, respectively. Taking each modulo 8, we get 0, 4, 0, and 4, respectively. Thus, $x^2 \equiv 0$ or $4 \mod 8$ when $x$ is even.
+    \item[(b)] Similarly, let $x$ be an odd integer. Modulo 8, the possible values of $x$ are 1, 3, 5, or 7. We compute the square of each: 1, 9, 25, and 49, respectively. Taking each modulo 8, we get 1 for all values of $x^2$ ($9-8=1, 25-24=1, 49-48=1$). Thus, $x^2 \equiv 1 \mod 8$ when $x$ is odd.
+\end{itemize}
+\item \begin{itemize}
+    \item[(a)] \begin{proof} We prove both directions of the if and only if.
+        Let $3\mid (d_k + \ldots d_1 + d_0)$. This means that $d_k + \cdots + d_1 + d_0 \equiv 0 \mod{3}$. Any power of 10 is equivalent to 1 modulo 3, thus we can mutliply every term $d_k + \cdots + d_1 + d_0$ by any integer $10^k$ and not change the value modulo 3. So, we have $10^k{d_k} + \cdots + 10d_1 + d_0 \equiv \mod{3}$. So $n \equiv 0 \mod{3}$, hence $3\mid n$. The argument is symmetric.
+    \end{proof}
+    \item[(b)] $1+2+7+1+5+3+6+9+7+7+3+7+5 = 63$. $3\mid 63$, and thus $3\mid 102,715,369,770,375$.
+\end{itemize}
+\item\begin{itemize}
+    \item[(a)] We have that $A=g^a \mod{37} = 83,521 \mod{37} = 12$, and that $B=g^b \mod{37} = 410,338,673 \mod{37}=15$. We calculate that $S$ from both perspectives: $S=A^b \mod{37}=12^7 \mod{37} = 9=B^a \mod{37}=15^4 \mod{37}$.
+    \item[(b)]  
+\end{itemize}
+\end{enumerate}
+\end{document}
