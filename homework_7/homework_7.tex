@@ -24,9 +24,8 @@
 \begin{document}
 \begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
 \item \begin{proof}
-    Suppose $a,b,c\in \mathbb{Z}^{+}$ and $a\mid c$ and $b\mid c$. Then, $c=(na)(db)$ for some $n,d\in \mathbb{Z}\setminus\{0\}$, and similarly $lcm(a,b)=m=(ka)(lb)$ for some $k,l\in \mathbb{Z}\setminus\{0\}$. By
-    Theorem 5.23 in the notes, there exist $q,r \in \mathbb{Z}$ such that $0\leq r < b$ and $c=qm+r$. Take $q=\frac{nd}{kl}$. Subbing in, we get $nd(ab)=\frac{nd}{kl}(kl)(ab)$. Simplifying, we get $nd=nd+r$, so $r=0$. If
-    $r=0$, it follows that $m\mid c$.
+    Suppose $a,b,c\in \mathbb{Z}^{+}$ and that $a\mid c$ and $b\mid c$. Suppose also that $m=lcm(a,b)$. By Theorem 5.23 in the notes, there must exist integers $q,r\in \mathbb{Z}$ with $0\leq r < m$ such that $c=qm+r$. $a\mid m$ and $b\mid m$, and so combined with our assumptions about $c$, $a\mid r$ and $b\mid r$, so $r$ is a multiple
+    of $a$ and $b$. However, $r<m$, so $r =0$. $r=0 \implies m\mid c$.
 \end{proof}
 
 \item \begin{proof}
@@ -40,7 +39,7 @@
 
 \item\begin{proof}
     By the Fundamental Theorem of Arithemtic, $b^2={p_1}^{2f_1}\cdots {p_k}^{2f_k}$ and $a^2={p_1}^{2e_1}\cdots {p_k}^{2e_k}$. Also, $b^2=na^2, n\in \mathbb{Z}$. We can also write $n$ as a product of primes, so we get\begin{center}
-        ${p_1}^{2f_1}\cdots {p_k}^{2f_k}=({p_1}^{d_1}\cdots {p_k}^{d_k})(a^2={p_1}^{2e_1}\cdots {p_k}^{2e_k})$.
+        ${p_1}^{2f_1}\cdots {p_k}^{2f_k}=({p_1}^{d_1}\cdots {p_k}^{d_k})({p_1}^{2e_1}\cdots {p_k}^{2e_k})$.
     \end{center} Expanding, we get that\begin{center}
         ${p_1}^{2f_1}\cdots {p_k}^{2f_k}={p_1}^{2e_1+d_1}\cdots {p_k}^{2e_k+d_k}$.
     \end{center} Also by the Fundamental Theorem of Arithemtic, prime factorization is unique, so ordering correctly, for all $i$, $2f_i = 2e_i + d_i$. $d_i \geq 0$, so $2f_i \geq 2e_i$ and $f_i \geq e_i$. 
@@ -54,13 +53,17 @@
 \end{itemize}
 \item \begin{itemize}
     \item[(a)] \begin{proof} We prove both directions of the if and only if.
-        Let $3\mid (d_k + \ldots d_1 + d_0)$. This means that $d_k + \cdots + d_1 + d_0 \equiv 0 \mod{3}$. Any power of 10 is equivalent to 1 modulo 3, thus we can mutliply every term $d_k + \cdots + d_1 + d_0$ by any integer $10^k$ and not change the value modulo 3. So, we have $10^k{d_k} + \cdots + 10d_1 + d_0 \equiv \mod{3}$. So $n \equiv 0 \mod{3}$, hence $3\mid n$. The argument is symmetric.
+        Let $3\mid (d_k + \ldots d_1 + d_0)$. This means that $d_k + \cdots + d_1 + d_0 \equiv 0 \mod{3}$. Any power of 10 is equivalent to 1 modulo 3, thus we can mutliply every term by any integer in the form $10^k$ and not change the value modulo 3. So, we have $10^k{d_k} + \cdots + 10d_1 + d_0 \equiv 0 \mod{3}$. So $n \equiv 0 \mod{3}$, hence $3\mid n$. The argument is symmetric.
     \end{proof}
     \item[(b)] $1+2+7+1+5+3+6+9+7+7+3+7+5 = 63$. $3\mid 63$, and thus $3\mid 102,715,369,770,375$.
 \end{itemize}
 \item\begin{itemize}
     \item[(a)] We have that $A=g^a \mod{37} = 83,521 \mod{37} = 12$, and that $B=g^b \mod{37} = 410,338,673 \mod{37}=15$. We calculate that $S$ from both perspectives: $S=A^b \mod{37}=12^7 \mod{37} = 9=B^a \mod{37}=15^4 \mod{37}$.
-    \item[(b)]  
+    \item[(b)] To find $S^{-1}$, we solve the equation $9S^{-1}\equiv 1 \mod{37}$. $\gcd(9,37)=1$ (via the Euclidean Algorithm), so by Fermat's Little Theorem, we have that $9^{37-1}\equiv 1 \mod{37}$. Thus, we get \begin{center}
+        $9\cdot 9^{35}\equiv 1 \mod{37}$.
+    \end{center} So, $9^{35} \mod{37}$ is $S^{-1}$. We compute that $9^{35} \equiv 33 \mod{37}$. Thus, $S^{-1} \equiv 33 \mod{37}$.
+    \item[(c)] Assuming Carlos used a $g=17$ (even though he might not be since he is not using $p=37$ like Alice and Bob), I used a Python script to find a value of $c$ that satisfies $5\equiv 17^c \mod{31}$. I computed $c=20$.
+    \item[(d)] I used a Python script to perform the following calculation for each of the characters in the secret message: for each character at index $i$ of the encrypted message $M$, we solve for $k$ in $9\cdot k \equiv M_i \mod{37}$. This gives a decoded message of 7DN292TWUZ.
 \end{itemize}
 \end{enumerate}
 \end{document}
