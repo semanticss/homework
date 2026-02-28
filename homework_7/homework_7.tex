@@ -38,12 +38,12 @@
     we have that the prime factorization of 1495 and 650 is $1495 = 5\cdot 13\cdot 23$ and $650 = 2\cdot 5^2\cdot 13$. Using the least common multiple algorithm, we take term of every prime factor that appears in either 1495 or 650 that has the maximum power between the two. Thus, we have $2\cdot 5^2\cdot 13\cdot 23 = 14,950$ also.
 
 \item\begin{proof}
-    By the Fundamental Theorem of Arithemtic, $b^2={p_1}^{2f_1}\cdots {p_k}^{2f_k}$ and $a^2={p_1}^{2e_1}\cdots {p_k}^{2e_k}$. Also, $b^2=na^2, n\in \mathbb{Z}$. We can also write $n$ as a product of primes, so we get\begin{center}
+    Suppose that $a,b \in \mathbb{Z}^{+}$, and that $a^2\mid b^2$. By the Fundamental Theorem of Arithemtic, $b^2={p_1}^{2f_1}\cdots {p_k}^{2f_k}$ and $a^2={p_1}^{2e_1}\cdots {p_k}^{2e_k}$. Also, $b^2=na^2, n\in \mathbb{Z}$. We can also write $n$ as a product of primes, so we get\begin{center}
         ${p_1}^{2f_1}\cdots {p_k}^{2f_k}=({p_1}^{d_1}\cdots {p_k}^{d_k})({p_1}^{2e_1}\cdots {p_k}^{2e_k})$.
     \end{center} Expanding, we get that\begin{center}
         ${p_1}^{2f_1}\cdots {p_k}^{2f_k}={p_1}^{2e_1+d_1}\cdots {p_k}^{2e_k+d_k}$.
     \end{center} Also by the Fundamental Theorem of Arithemtic, prime factorization is unique, so ordering correctly, for all $i$, $2f_i = 2e_i + d_i$. $d_i \geq 0$, so $2f_i \geq 2e_i$ and $f_i \geq e_i$. 
-    Appealing to Remark 5.20 in the notes, we now have that $a\mid b$.
+    Appealing to Remark 5.20 in the notes, we have that $a\mid b$.
 \end{proof}
 
 
