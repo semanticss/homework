@@ -22,46 +22,66 @@
 \fancyhead[r]{\today}
 
 \begin{document}
-\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*:}, leftmargin=1in]
+\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*}, leftmargin=1in]
 \item For the following proofs, suppose $F$ is a field, and $a,b\in F$. \begin{itemize}
-    \item[(a)] If $a=0$ or $b=0$, we are done. If not, WLOG, let $a\neq 0$. Then, multiplying by $a^{-1}$ (which is guaranteed to exist by A13), we get $b=0$. Thus, $a=0$ or $b=0$.
-    \item[(b)] Suppose $a^2=b^2$. Then, $a^2-b^2=(a-b)(a+b)=0$. Using the result from (a), $a-b=0$ or $a+b=0$. Thus, $a=b$ or $a=-b$.
-    \item[] 
+    \item[(a)] \begin{proof}
+    If $a=0$ or $b=0$, we are done. If not, WLOG, let $a\neq 0$. Then, multiplying by $a^{-1}$ (which is guaranteed to exist by A13), we get $b=0$. Thus, $a=0$ or $b=0$. \end{proof}
+    \item[(b)]\begin{proof}Suppose $a^2=b^2$. Then, $a^2-b^2=(a-b)(a+b)=0$. Using the result from (a), $a-b=0$ or $a+b=0$. Thus, $a=b$ or $a=-b$.\end{proof}
+    \item[(c)] \begin{proof}Suppose $x\in \mathbb{R}^{+}$. \begin{description}
+    \item[Existence] By Theorem 6.14 in the notes, there is a $y\in \mathbb{R}^{+}$ such that $x=y^2$.
+    \item[Uniqueness] Suppose there exists a $y$ and $y'$ such that ${(y')}^2=x = y^2$. Then, ${(y')}^2=y^2$, and by the result from part (b), $y=y'$ or $y=-y'$. Consider $y=-y$, it cannot be the case both $y$ and $-y'$ are in $\mathbb{R}^{+}$, thus we must have $y=y'$, and $y$ is unique.
+    \end{description}
+    \end{proof}
 \end{itemize}
-\item should be Q2 \begin{proof}
+\item\begin{proof}
     Consider the set $L$, which is the set containing all lower bounds. It is bounded above by every element in $S$ (which exist because by assumption, $S$ is non-empty). So, $L$ has a supremum $l$.
     We claim that $l=\inf S$.\begin{description}
         \item[Lower Boundedness] By definition, $l$ is a lower bound.
         \item[Greatness] By definition, $l$ is the greater than every lower bound.
     \end{description} Thus, $l=\inf S$, and therefore $S$ admits an infimum.
 \end{proof}
-\item should be Q3 \begin{itemize}
-    \item[(a)]\begin{proof}
+\item \begin{itemize}
+    \item[(a)]\begin{proof}By definition, $a$ is the minimum element of $S$, and is therefore the infimum.
 
 \end{proof}
-    \item[(b)] We claim that $b = \sup S$.
+    \item[(b)] \begin{proof}
+        We claim that $b = \sup S$.
     \begin{description}
         \item[Upper Boundedness] Rewriting $S$ as $S=\Set{x\in \mathbb{R} | a \leq x < b}$, we can see that $b$ is an upper bound by definition.
         \item[Leastness] For the sake of contradiction, assume $b$ is not the supremum. Then, there exists a $\sup S = u$. By definition, we must have $a\leq u < b$. By Theorem 6.12 in the notes, we can construct
         a rational number $r$ with $u<r<b$. By extension, we have $a\leq u<r<b$. So, $r\in S$, and $u$ is not an upper bound. This a contradiction with our intial assumption, so $b$ must be the least upper bound.
     \end{description}
     Thus, $\sup S = b$.
+    \end{proof}
 \end{itemize}
 
-\item should be q4. We compute that $\sup S = 1$ and $\inf S = 0$. We first prove the former.\begin{proof}
+\item We compute that $\sup S = 1$ and $\inf S = 0$. We first prove the former.\begin{proof}
     The first element in $S$ is 1, and every succesive element is smaller, thus 1 is the max of $S$. So, $1=\sup S$.
 \end{proof}
     Next, we prove $\inf S = 0$.\begin{proof}
         how tf u do ts i thought the rationals were incomplete
     \end{proof}
 
-\item should be q5. \begin{proof}
-    Suppose $\alpha$ is irrational, and $r\in \mathbb{Q}\setminus{0}$. Suppose for the sake of contradiction that $r\alpha \in \mathbb{Q}$. Then,
+\item \begin{proof}
+    Suppose $\alpha$ is irrational, and $r\in \mathbb{Q}\setminus\{0\}$. Suppose for the sake of contradiction that $r\alpha \in \mathbb{Q}$. Then,
     we can write $r\alpha = \frac{c}{d}$ for $c,d\in \mathbb{Z}$. We can also write $r=\frac{a}{b}$ for $a,b\in \mathbb{Z}$. Then, we have $r\alpha = \frac{a}{b}\alpha= \frac{c}{d}$. Rearranging, we get that \begin{center}
         $\alpha = \frac{bc}{ad}$,
     \end{center} which means $\alpha \in \mathbb{Q}$ (since $a,b,c,d\in \mathbb{Z}$). However, this contradicts the assumption that $\alpha$ was irrational. Thus, $r\alpha$ is irrational for every $r\in \mathbb{Q}\setminus {0}$.
 \end{proof}
-\item should be q7
+
+\item\begin{itemize}
+    \item[(a)] \begin{proof}
+        Suppose $a,b \in \mathbb{R}$, and $a<b$.\begin{lemma}
+        ${\sqrt{2}}^{-1}$ is irrational.\upshape \par We know by Theorem 1.20 in the notes that $\sqrt{2}$ is irrational. For the sake of contradiction, assume that ${\sqrt{2}}^{-1}$ (which exists by A13) is rational. By definition, $\sqrt{2}\cdot {\sqrt{2}}^{-1} = 1$, which means that a rational times an irrational is a rational, which is a contradiction in light of the result from Problem 5. Thus, ${\sqrt{2}}^{-1}$ is irrational.
+        \end{lemma}We then multiple the inequality through by ${\sqrt{2}}^{-1}$ to obtain ${\sqrt{2}}^{-1}a<{\sqrt{2}}^{-1}b$. By Theorem 6.12 in the notes, there is a rational number $r$ with $\sqrt{2}a<r<\sqrt{2}b$. Multiplying back through by $\sqrt{2}$, we obtain\begin{center}$a<\sqrt{2}r<b$.\end{center} Thus, we have constructed an irrational number between $a$ and $b$, and there is an irrational number between any two real numbers.
+    \end{proof}
+    \item[(b)] \begin{proof}
+        Suppose $a,b \in \mathbb{R}$, and $a<b$. Suppose also, for the sake of contradiction, that there a finite number of rational numbers between $a$ and $b$. Then, we can enumerate them:\begin{center}
+            $a<r_1<r_2<\cdots<r_{n-1}<r_n<b$,
+        \end{center} where $r_i \in \mathbb{Q}$, and this enumeration is exhuastive. Consider $r_1$ and $r_2$, By Theorem 6.12 from the notes, we can find an rational number $\rho$ such that $r_1<\rho <r_2$. Therefore, there is another rational number that we did not initially include in the list, and our list was not exhuastive. This is a contradiction, and there must be an infinite number of rational numbers between any two real numbers.
+    \end{proof}
+\end{itemize}
+\item
     \begin{itemize}
         \item[(a)] We compute $x_3$ in base 10 with this expression: \begin{center}
             $\sum\limits_{n=1}^{\infty}\frac{2}{3^{3n}}=\frac{2}{3}\sum\limits_{n=1}^{\infty}\frac{1}{3^n}=0.\overline{3}_{10}$.
@@ -69,7 +89,7 @@
         \item[(b)] Similarly for $y_3$:\begin{center}
             $\sum\limits_{n=1}^{\infty}\frac{1}{3^{2n}}+\sum\limits_{n=1}^{\infty}\frac{1}{3^{3n}}=\frac{1}{9}\sum\limits_{n=1}^{\infty}\frac{1}{3^n}+\sum\limits_{n=1}^{\infty}\frac{1}{3^n}=\frac{4}{54}=0.0\overline{740}_{10}$.
         \end{center} you tell me if its in the cantor set twin
-        \item[(c)] For $z_3$, there is only one digit to compute. It is in the third place to the right, so it is $\frac{1}{3^3}=\frac{1}{27}=0.0\overline{370}_{10}$
+        \item[(c)] For $z_3$, there is only one digit to compute. It is in the third place to the right, so it is $\frac{1}{3^3}=\frac{1}{27}=0.0\overline{370}_{10}$. It is in the Cantor set.
     \end{itemize}
 \end{enumerate}
 \end{document}
