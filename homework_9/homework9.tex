@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\newtheorem{lemma}{Lemma}
+\usepackage{braket}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+
+
+\pagestyle{fancy}
+\fancyhead[l]{Hudson Benites}
+\fancyhead[c]{Homework \#7}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\setlength{\headheight}{15pt}
+\fancyhead[r]{\today}
+
+\begin{document}
+\begin{enumerate}[start = 1, label = {\bfseries Question \arabic*}, leftmargin=1in]
+\item Consider the functions $f:[0,1]\to [a,b]$ and $g:[0,1]\to [a,b]$ given by $f(x)=x(b-a)+a$ and $g(x)=\frac{x-a}{b-a}$.\begin{center}
+    $g(f(x))=\frac{x(b-a)+a-a}{b-a}=\frac{x(b-a)}{b-a}=x$.
+\end{center} Thus, $f$ is invertible, and therefore is a bijection.
+\item \begin{itemize}
+    \item[(a)] Consider the function $f:\mathbb{Z}^{+} \to \mathbb{Z}\setminus \{0\}$ given by \begin{center}$f(n) = \begin{cases}
+        \frac{n}{2} & n \text{ is even}\\
+        \frac{-1-n}{2} & \text{otherwise}
+    \end{cases}$.
+    \end{center}
+    \item[(b)] \begin{proof}
+    We show that $g$ is a bijection by constructing an inverse. Consider the function $m:\mathbb{Q}^{+}\to \mathbb{Z}^{+}$ defined by $m(l) = {p_1}^{f^{-1}(a_1)}\cdots {p_r}^{f^{-1}(a_r)}$. We know $f^{-1}$ exists from (a). Composing 
+    $m$ and $g$, we compute\begin{center}
+        $m(g(n))={p_1}^{f^{-1}(f(a_1))}\cdots{p_r}^{f^{-1}(f(a_r))}={p_1}^{a_1}\cdots{p_r}^{a_r}=n$.
+    \end{center} Thus, $g$ is bijective.
+    \end{proof}
+\end{itemize}
+\item\begin{proof}
+    Suppose $A,B,C,D$ are sets, and $A\prec C$. For the sake of contradiction, assume that $D\preccurlyeq B$. There are two cases:\begin{description}
+        \item[$(D\approx B)$] If $D\approx B$, then by the transitivity of $\approx$,  $D\approx A$. However, if this is the case, then we have $D\prec C$ by
+        our assumption that $A\prec C$. This is a contradiction with our initial assumption that $C\approx D$. Thus, $D\not\approx B$.
+        \item[$(D\prec B)$] If $D\prec B$, then there exists an injection $D\hookrightarrow B$. By our assumption that $A\approx B$, there is an injection $B\hookrightarrow A$. The
+        composition of injective functions is injective, and thus there is an injection $D\hookrightarrow A$. Thus, $D\preccurlyeq A$. If $D\approx A$, we reach a contradiction from case 1. If $D\prec A$,
+        we have $D\prec A \prec C$, which would contradict our initial assumption that $D\approx C$.
+    \end{description}
+    We reach a contradiction in both cases, and so we must have that $B\prec D$.
+\end{proof}
+
+\item\begin{proof}
+    Suppose a set $A$ is infinite, and that $B\subseteq A$ is finite. Assume for the sake of contradiction that $A\setminus B$ is finite. We note that $A\setminus B \cup B = A$. By Theorem ? from the notes, a finite
+    union of finite sets is finite. Thus, $A\setminus B \cup B = A$ is finite---however, this is a contradiction with out assumption that $A$ is infinite. Thus, $A\setminus B$ is infinite.
+\end{proof}
+
+\item\begin{proof}
+    Suppose a set $A$ is countable, and that $B\subseteq A$ is countable. Assume for the sake of contradicition that $A\setminus B$ is countable. We note that $(A\setminus B) \cup B = A$. By Theorem 7.6 from the notes
+    we have that the union of two countable sets is itself countable. Thus, we must have that $A$ is countable, which is a contradicition to our assumption that $A$
+    was uncountable. Thus, $A\setminus B$ is uncountable.
+\end{proof}
+\end{enumerate}
+\end{document}
