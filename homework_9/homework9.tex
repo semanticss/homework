@@ -38,6 +38,12 @@
         $m(g(n))={p_1}^{f^{-1}(f(a_1))}\cdots{p_r}^{f^{-1}(f(a_r))}={p_1}^{a_1}\cdots{p_r}^{a_r}=n$.
     \end{center} Thus, $g$ is bijective.
     \end{proof}
+    \item[(c)] We construct the following function:\begin{center}
+        $h(x)=\begin{cases}
+            g(f(n)) & \text{if } n\in\mathbb{Z}^{+}\\
+            -g(f(-n)) & \text{if } n\not\in\mathbb{Z}^{+}
+        \end{cases}$.
+    \end{center}
 \end{itemize}
 \item\begin{proof}
     Suppose $A,B,C,D$ are sets, and $A\prec C$. For the sake of contradiction, assume that $D\preccurlyeq B$. There are two cases:\begin{description}
@@ -51,7 +57,7 @@
 \end{proof}
 
 \item\begin{proof}
-    Suppose a set $A$ is infinite, and that $B\subseteq A$ is finite. Assume for the sake of contradiction that $A\setminus B$ is finite. We note that $A\setminus B \cup B = A$. By Theorem ? from the notes, a finite
+    Suppose a set $A$ is infinite, and that $B\subseteq A$ is finite. Assume for the sake of contradiction that $A\setminus B$ is finite. We note that $A\setminus B \cup B = A$, and that a finite
     union of finite sets is finite. Thus, $A\setminus B \cup B = A$ is finite---however, this is a contradiction with out assumption that $A$ is infinite. Thus, $A\setminus B$ is infinite.
 \end{proof}
 
@@ -59,6 +65,21 @@
     Suppose a set $A$ is countable, and that $B\subseteq A$ is countable. Assume for the sake of contradicition that $A\setminus B$ is countable. We note that $(A\setminus B) \cup B = A$. By Theorem 7.6 from the notes
     we have that the union of two countable sets is itself countable. Thus, we must have that $A$ is countable, which is a contradicition to our assumption that $A$
     was uncountable. Thus, $A\setminus B$ is uncountable.
+\end{proof}
+\item\begin{proof}
+    Suppose $\mathbb{Z}[x]$ is the set of all polynomials with integer coefficients. Consider $F_n=\Set{f\in \mathbb{Z}[x]| \deg(f)\leq n}$.\begin{lemma}
+        $F_n=\Set{f\in \mathbb{Z}[x]| \deg(f)\leq n}\approx \mathbb{Z}^{n+1}$.\upshape \par
+        We construct a bijection $\mathbb{Z}^{n+1}\to F_n$ via $(a_0, a_1,\ldots,a_n)\to a_n{x^n}\cdots a_1{x}+a_0$.
+    \end{lemma} Appealing to Lemma 1, $F_n$ is countable. Then, we can see that $\mathbb{Z}[x]=\bigcup\limits_{n=0}^{\infty}F_n$. Then, $\mathbb{Z}[x]$ is a countable union of countable sets, and is thus countable.
+\end{proof}
+\item\begin{proof}
+    We follow the proof the Cantor-Shröder-Bernstein theorem, and construct a bijection via the progenitor-ancestor method. We notice that the set of elements in $A$ whose progenitor lies in $B$ is $A_B = \Set{\frac{1}{4}, \frac{3}{8},\ldots}\cup \Set{\frac{3}{4},\frac{5}{8},\ldots}$ and 
+    that the set of elements $B$ whose elements lie in $B$ is $B_B=A_B \cup \Set{1}$. We construct the following function:\begin{center}
+        $h(x)=\begin{cases}
+            \frac{2^{n-1}+1}{2^n} & \text{if } x=\frac{2^n+1}{2^{n+1}} \text{ for some } n\in \mathbb{Z}^{+}\\
+            x & \text{otherwise}
+        \end{cases}$.
+    \end{center} 
 \end{proof}
 \end{enumerate}
 \end{document}
